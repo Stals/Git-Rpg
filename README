@@ -1,10 +1,17 @@
 This is an opensource project, so feel free to join.
 
-IDEA:
-General idea is to get insertions and delitions from all your repos. So that every time youre coding youre gaining exp.(For the number of line) There also could be achievements( for example at least 100 lines of code per day for 3 days or 10 commits, 1000 lines total and so on)
+
+General idea is to get insertions and delitions from all your repos. So that every time youre coding youre gaining exp.(For the number of lines) 
+
+There also could be achievements( for example at least 100 lines of code per day for 3 days or 10 commits, 1000 lines total and so on)
 Also this system can track several people and make rating.
 
-At the begining i think i would make it just for one person and his local repos. Because otherwise it would be huge, and if nobody needs this, i dont see the point.
+At the begining i will make it just for one person and his local repos. Because otherwise it would a lot of work, and if nobody needs this , there is no scence. We'll see.
+
+IDEAS:
+* Achievements
+* Rating
+
 TODO:
 * finish the consept
 * write first script to gather information from all repos
