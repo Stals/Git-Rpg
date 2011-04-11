@@ -1,33 +1,28 @@
-﻿Build started 4/6/2011 7:08:36 PM.
-     1>Project "C:\Users\Stals\Desktop\test\git\git\git.vcxproj" on node 2 (build target(s)).
-     1>PrepareForBuild:
-         Creating directory "C:\Users\Stals\Desktop\test\git\Debug\".
-       InitializeBuildStatus:
-         Creating "Debug\git.unsuccessfulbuild" because "AlwaysCreate" was specified.
+﻿Build started 4/11/2011 2:50:16 PM.
+     1>Project "C:\My Dropbox\Programming\BigProjects\C++\GitRPG\git\git\git.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\parse-raw.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\git.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\git.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt git.cpp
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\parse-raw.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt git.cpp
          git.cpp
        ManifestResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\git.exe.embed.manifest.res" Debug\git_manifest.rc 
+         All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Stals\Desktop\test\git\Debug\git.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\git.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Stals\Desktop\test\git\Debug\git.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Stals\Desktop\test\git\Debug\git.lib" /MACHINE:X86 Debug\git.exe.embed.manifest.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\My Dropbox\Programming\BigProjects\C++\GitRPG\git\Debug\parse-raw.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\parse-raw.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\My Dropbox\Programming\BigProjects\C++\GitRPG\git\Debug\parse-raw.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\My Dropbox\Programming\BigProjects\C++\GitRPG\git\Debug\parse-raw.lib" /MACHINE:X86 "Debug\parse-raw.exe.embed.manifest.res"
          Debug\git.obj
          Debug\stdafx.obj
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\git.exe.embed.manifest" /manifest Debug\git.exe.intermediate.manifest
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\git.exe.embed.manifest.res" Debug\git_manifest.rc 
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\parse-raw.exe.embed.manifest" /manifest "Debug\parse-raw.exe.intermediate.manifest"
+         All outputs are up-to-date.
        LinkEmbedManifest:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Stals\Desktop\test\git\Debug\git.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\git.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Stals\Desktop\test\git\Debug\git.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Stals\Desktop\test\git\Debug\git.lib" /MACHINE:X86 Debug\git.exe.embed.manifest.res
-         Debug\git.obj
-         Debug\stdafx.obj
-         git.vcxproj -> C:\Users\Stals\Desktop\test\git\Debug\git.exe
+         All outputs are up-to-date.
+         git.vcxproj -> C:\My Dropbox\Programming\BigProjects\C++\GitRPG\git\Debug\parse-raw.exe
        FinalizeBuildStatus:
-         Deleting file "Debug\git.unsuccessfulbuild".
-         Touching "Debug\git.lastbuildstate".
-     1>Done Building Project "C:\Users\Stals\Desktop\test\git\git\git.vcxproj" (build target(s)).
+         Deleting file "Debug\parse-raw.unsuccessfulbuild".
+         Touching "Debug\parse-raw.lastbuildstate".
+     1>Done Building Project "C:\My Dropbox\Programming\BigProjects\C++\GitRPG\git\git\git.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.80
+Time Elapsed 00:00:03.05
