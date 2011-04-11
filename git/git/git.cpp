@@ -43,19 +43,18 @@ void getData(){
 }
 void parseRaw(){
 	std::ifstream f("raw");
-	std::string str;
-	std::string nick;
+	std::string str;//используется чтобы перебирать сторки
+	std::string nick; //хранит ник человека комит которого мы просматриваем
 	f>>projectDir;
 
 	//	Если встречается слово files то, если следующее слово changed, то после этого следает нужное нам число.
-	
+
 	while(f>>str){
 		//TODO:Ник может быть из нескольких слово поэтом нужно сделать append до тех пор пока в слове первый символ не будет < - что значит почта, но почта не обязательно будет.
 		if(str=="Author:"){//тут можно получить ник
 			f>>nick;
 		}
-
-
+		
 		if(str=="files"){
 			f>>str;
 			if(str=="changed,"){
@@ -63,34 +62,41 @@ void parseRaw(){
 				f>>str;
 				if(str=="insertions(+),"){
 					f>>l.minus;
-					
-
 					it=rawData.find(nick);
-					//Если такого ника нету в map , тогда добавляется запись - иначе увеличивается кол-вл plus и minus
+					//Если такого ника нету в map , тогда добавляется запись - иначе увеличивается кол-вл plus и minus для этого ника
 					if(it==rawData.end()){ //если записи с таким ником еще небыло
 						rawData.insert ( std::pair<std::string,lines >(nick,l) );
 					}else{
 						it->second.plus+=l.plus;
 						it->second.minus+=l.minus;
-					
 					}
 				}
 				l.clear();
-				
 			}
 		}
 	}
 	projectDir.clear();
 }
 
+//Сравнивает raw с data для этой дериктории и изменяет в data ,если raw число увеличилось
+void editData(){
 
+}
+//Сохраняет В Stals новую информацию полученную из raw 
+void saveData(){
 
+}
 int main()
 {
-
+	
 	getData();
 	parseRaw();
+	//Сейчас projectDir - это дериктория проекта из которого был получен raw
 
+	//Сейчас мы должны сравнить кол-во плючсов и минусов для этой дериктории по сравнению с этой дерикторией в Stals , если такой нет, тогда добавляем новую запись в тот map
+	editData();
+	//сохраняем всё обратно в файл
+	saveData();
 	return 0;
 }
 
