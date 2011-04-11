@@ -10,16 +10,21 @@
 #include <Windows.h>
 #include <map>
 #include <fstream>
+
 struct lines {
 	int plus;
 	int minus;
+	void clear(){plus=0;minus=0;}
 }l;
-std::map<std::string,lines> data;
-int numberOfProjects=0;
+std::map<std::string,lines> data; //data from "your name" file
+std::map<std::string,lines> rawData; //data from raw file
+std::map<std::string,lines>::iterator it;
+
+
 std::string projectDir;
 
 void getData(){
-
+	int numberOfProjects=0;
 	std::ifstream f("Stals");
 	f>>numberOfProjects;
 
@@ -30,16 +35,61 @@ void getData(){
 		f>>l.minus;
 
 		data.insert ( std::pair<std::string,lines >(projectDir,l) );
-		
+		l.clear();
+		projectDir.clear();
 	}
-
+	f.close();
 
 }
+void parseRaw(){
+	std::ifstream f("raw");
+	std::string str;
+	std::string nick;
+	f>>projectDir;
+
+	//	Если встречается слово files то, если следующее слово changed, то после этого следает нужное нам число.
+	
+	while(f>>str){
+		//TODO:Ник может быть из нескольких слово поэтом нужно сделать append до тех пор пока в слове первый символ не будет < - что значит почта, но почта не обязательно будет.
+		if(str=="Author:"){//тут можно получить ник
+			f>>nick;
+		}
+
+
+		if(str=="files"){
+			f>>str;
+			if(str=="changed,"){
+				f>>l.plus;
+				f>>str;
+				if(str=="insertions(+),"){
+					f>>l.minus;
+					
+
+					it=rawData.find(nick);
+					//Если такого ника нету в map , тогда добавляется запись - иначе увеличивается кол-вл plus и minus
+					if(it==rawData.end()){ //если записи с таким ником еще небыло
+						rawData.insert ( std::pair<std::string,lines >(nick,l) );
+					}else{
+						it->second.plus+=l.plus;
+						it->second.minus+=l.minus;
+					
+					}
+				}
+				l.clear();
+				
+			}
+		}
+	}
+	projectDir.clear();
+}
+
+
+
 int main()
 {
-	
-	getData();
 
+	getData();
+	parseRaw();
 
 	return 0;
 }
