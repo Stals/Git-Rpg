@@ -22,15 +22,19 @@ std::map<std::string,lines>::iterator it;
 
 
 std::string projectDir;
+int plusDif;//разница плюсов по сравнению с тем что было до commit'а
+int minusDif;//разница минусов
+
 
 void getData(){
 	int numberOfProjects=0;
 	std::ifstream f("Stals");
 	f>>numberOfProjects;
-
+	
 	for(int i=0;i<numberOfProjects;++i){
 
-		f>>projectDir;
+		std::getline(f,projectDir);//чтобы убрать конец строки
+		std::getline(f,projectDir);
 		f>>l.plus;
 		f>>l.minus;
 
@@ -46,15 +50,26 @@ void parseRaw(){
 	std::string str;//используется чтобы перебирать сторки
 	std::string nick; //хранит ник человека комит которого мы просматриваем
 	f>>projectDir;
+	
+	
+	while(str!="commit"){//если путь с пробелами собираем его по словам
+	
+		projectDir=projectDir+" "+str;
+	f>>str;
+	}
 
 	//	Если встречается слово files то, если следующее слово changed, то после этого следает нужное нам число.
 
 	while(f>>str){
+
+		
+
+
 		//TODO:Ник может быть из нескольких слово поэтом нужно сделать append до тех пор пока в слове первый символ не будет < - что значит почта, но почта не обязательно будет.
 		if(str=="Author:"){//тут можно получить ник
 			f>>nick;
 		}
-		
+
 		if(str=="files"){
 			f>>str;
 			if(str=="changed,"){
@@ -75,12 +90,27 @@ void parseRaw(){
 			}
 		}
 	}
-	projectDir.clear();
+	
 }
 
 //Сравнивает raw с data для этой дериктории и изменяет в data ,если raw число увеличилось
+//Если такой дериктории небыло то создаёт её
 void editData(){
+	/*minusDif=rawData["Stals"].minus-data[projectDir].minus;
+		plusDif=rawData["Stals"].plus-data[projectDir].plus;*///это для высчитывания разницы
 
+	it=data.find(projectDir);
+	if(it!=data.end()){
+		it->second.minus=rawData["Stals"].minus;
+		it->second.plus=rawData["Stals"].plus;
+	}else{
+		l.minus=rawData["Stals"].minus;
+		l.plus=rawData["Stals"].plus;
+		data.insert ( std::pair<std::string,lines >(projectDir,l) );
+	
+	}
+	//l.clear();
+	projectDir.empty();
 }
 //Сохраняет В Stals новую информацию полученную из raw 
 void saveData(){
@@ -88,7 +118,7 @@ void saveData(){
 }
 int main()
 {
-	
+
 	getData();
 	parseRaw();
 	//Сейчас projectDir - это дериктория проекта из которого был получен raw
