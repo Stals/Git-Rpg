@@ -10,7 +10,7 @@
 #include <Windows.h>
 #include <map>
 #include <fstream>
-
+//
 struct lines {
 	int plus;
 	int minus;
