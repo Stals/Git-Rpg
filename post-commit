@@ -6,7 +6,7 @@
 # To enable this hook, rename this file to "post-commit".
 
 
-pwd > "C:\My Dropbox\Programming\BigProjects\C++\GitRPG\raw.gr"
+pwd > "C:\My Dropbox\Programming\BigProjects\C++\GitRPG\raw"
 git log --shortstat >> "C:\My Dropbox\Programming\BigProjects\C++\GitRPG\raw"
 
 
