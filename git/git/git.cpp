@@ -95,6 +95,7 @@ void parseRaw(){
 
 //Сравнивает raw с data для этой дериктории и изменяет в data ,если raw число увеличилось
 //Если такой дериктории небыло то создаёт её
+//TODO: передавать сюда строку с ником человека для которого меняем
 void editData(){
 	/*minusDif=rawData["Stals"].minus-data[projectDir].minus;
 		plusDif=rawData["Stals"].plus-data[projectDir].plus;*///это для высчитывания разницы
@@ -109,12 +110,20 @@ void editData(){
 		data.insert ( std::pair<std::string,lines >(projectDir,l) );
 	
 	}
-	//l.clear();
+	l.clear();
 	projectDir.empty();
 }
 //Сохраняет В Stals новую информацию полученную из raw 
 void saveData(){
+	std::ofstream f("Stals");
+	f<<data.size()<<std::endl;
+	for(it=data.begin();it!=data.end();++it){
+		f<<it->first<<std::endl;
+		f<<it->second.plus<<std::endl;
+		f<<it->second.minus<<std::endl;
+	}
 
+	f.close();
 }
 int main()
 {
@@ -123,9 +132,9 @@ int main()
 	parseRaw();
 	//Сейчас projectDir - это дериктория проекта из которого был получен raw
 
-	//Сейчас мы должны сравнить кол-во плючсов и минусов для этой дериктории по сравнению с этой дерикторией в Stals , если такой нет, тогда добавляем новую запись в тот map
+	//Сейчас мы должны сравнить кол-во  плючсов и минусов для этой дериктории по сравнению с этой дерикторией в Stals , если такой нет, тогда добавляем новую запись в тот map
 	editData();
-	//сохраняем всё обратно в файл
+	//сохраняем всё обратно в файл(ы)
 	saveData();
 	return 0;
 }
