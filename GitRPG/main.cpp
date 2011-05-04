@@ -16,7 +16,7 @@ public:
         {
             _w=w;
 
-                addPath(QDir::current().filePath("main.cpp"));
+                addPath(QDir::current().filePath("Stals"));
                 connect(this, SIGNAL(fileChanged(const QString&)), this, SLOT(fileChanged(const QString&)));
                // qDebug() << "monitoring" << files();
 
