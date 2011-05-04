@@ -14,7 +14,7 @@ IDEAS:
 
 TODO:
 * QT form
-* script should launch parseRaw (git.exe)
+* script should launch parseRaw (parse-raw.exe)
 * (done) finish the consept
 * (done) write first script to gather information from all repos 
 * (done) use gitHub issues system
