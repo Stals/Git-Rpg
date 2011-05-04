@@ -1,4 +1,20 @@
 /c/My Dropbox/Programming/BigProjects/C++/GitRPG
+commit 88fe4cbc4a0385b92a0767d20fb45c6e1bd69ed8
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:21:49 2011 +0400
+
+    test test
+
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit 766b95039cf465bdcfbbd0fab85ce748a0c13734
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:15:42 2011 +0400
+
+    parse-raw test 3
+
+ 1 files changed, 286 insertions(+), 0 deletions(-)
+
 commit 55808cc65aa4b2d58e9f3b4fca621203d0df9368
 Author: Stals <stalsfromhell@gmail.com>
 Date:   Wed May 4 16:14:01 2011 +0400
