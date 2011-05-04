@@ -1,4 +1,44 @@
-/c/My Dropbox/Programming/BigProjects/C++/GitRPG
+/c/My Dropbox/Programming/BigProjects/C++/GitRPG2
+commit 5817b08eb184e69424fd540d91d55a5bac111a88
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:48:05 2011 +0400
+
+    finally parse-raw runs.
+
+ 1 files changed, 4 insertions(+), 10 deletions(-)
+
+commit 360e96e0ef665cfb1090e9d15ab36d9985533e73
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:41:44 2011 +0400
+
+    readme
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit dabe021707b42c26e66ac21ac2c08fd457b2aabc
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:38:26 2011 +0400
+
+    readme update
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 9275761c7606c80c2bfdc62764ad291320153310
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:36:19 2011 +0400
+
+    readme update
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 2b437370851ee626e83b064e02a6bdab9fcb0f66
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:34:43 2011 +0400
+
+    test again
+
+ 1 files changed, 16 insertions(+), 0 deletions(-)
+
 commit 71a74a00a5bfa58fa7de8b457474f758f7b8d252
 Author: Stals <stalsfromhell@gmail.com>
 Date:   Wed May 4 16:30:52 2011 +0400
