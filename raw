@@ -1,0 +1,286 @@
+/c/My Dropbox/Programming/BigProjects/C++/GitRPG
+commit 55808cc65aa4b2d58e9f3b4fca621203d0df9368
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:14:01 2011 +0400
+
+    parse-raw test 2
+
+ 1 files changed, 0 insertions(+), 7 deletions(-)
+
+commit 66c315056b82e9ba745bae775e19e88b0e5a19b3
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:12:39 2011 +0400
+
+    parse-raw test
+
+ 1 files changed, 0 insertions(+), 0 deletions(-)
+
+commit d61a1eb10fc46eac4a83821fffbd5eb9ba754ada
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:07:32 2011 +0400
+
+    readme updated
+
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+commit faea90e1b605ccd93678cc70541629ea2df96989
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 2 16:02:22 2011 +0400
+
+    added qt project that will track stats file and add exp, lvl ect if file was changed
+
+ 10 files changed, 691 insertions(+), 1 deletions(-)
+
+commit 0a2af13cffeea41946485a1295cd925f0204fbf5
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 13 12:42:55 2011 +0400
+
+    finished save data close #001
+
+ 2 files changed, 15 insertions(+), 6 deletions(-)
+
+commit 026a51ccc4fd950aeb084c7af081c63b6dd35729
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 15:17:24 2011 +0400
+
+    this commit closes #001
+
+ 3 files changed, 274 insertions(+), 6 deletions(-)
+
+commit 3b4cc3865341088c3f50853b89ef58f12a5b2f7c
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 14:34:03 2011 +0400
+
+    script fix
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit ff0943f7c448ba226ddd21fc4c2ce1ed5b66d9a1
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 14:18:13 2011 +0400
+
+    script test
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 78ff270f8ed1815255162f8124d1f26eca56c318
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 14:15:10 2011 +0400
+
+    deleted raw
+
+ 1 files changed, 0 insertions(+), 239 deletions(-)
+
+commit 0292903617242bc23db66a017c9ad5d2fe68e996
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 12:04:39 2011 +0400
+
+    readme
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 43e9bda1340e68762e6147832b76c53708a70f35
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 12:03:34 2011 +0400
+
+    readme
+
+ 1 files changed, 18 insertions(+), 18 deletions(-)
+
+commit 197dab56421c2952f40fcdc66c248c82b3d0f8b9
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 11:56:34 2011 +0400
+
+    suo
+
+ 1 files changed, 0 insertions(+), 0 deletions(-)
+
+commit adf827418f839b1dd3cdecd8600e6f237566b0d4
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 11:56:01 2011 +0400
+
+    ipch
+
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 6c6ff2715d6d3bb7e33e6e9b4ee91166de77f1e3
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 11:55:39 2011 +0400
+
+    gitignore
+
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 3ddfa764b1c983c4c2500cb04ab1a5834ef43507
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 11:50:12 2011 +0400
+
+    deleted some files
+
+ 70 files changed, 0 insertions(+), 125 deletions(-)
+
+commit 01f42b0a244ff8d4bcc221091c66bf6a26ae830b
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 11:47:59 2011 +0400
+
+    gitignore
+
+ 2 files changed, 6 insertions(+), 12 deletions(-)
+
+commit 7bde6a55ba66771e4de85c498ab31889f5d0eb82
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 11:31:13 2011 +0400
+
+    edit
+
+ 15 files changed, 303 insertions(+), 87 deletions(-)
+
+commit 1aab5bd9b402f297486321514fed0bcf53bd1ed9
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue Apr 12 10:41:06 2011 +0400
+
+    gitignore
+
+ 1 files changed, 46 insertions(+), 0 deletions(-)
+
+commit 9dbe23c8fc4543a64e080737b2a993f95e0b4772
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon Apr 11 16:33:33 2011 +0400
+
+    добавил комментарии к коду
+
+ 1 files changed, 17 insertions(+), 11 deletions(-)
+
+commit e5301e5c6de26f83c956a916d12e9563c6663c44
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon Apr 11 15:58:19 2011 +0400
+
+    added parse , now i need to save it to data
+
+ 1 files changed, 56 insertions(+), 6 deletions(-)
+
+commit 8a4acfd251716075a4f741ec6d3f3fc5bc166dc9
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon Apr 11 14:59:22 2011 +0400
+
+    parse-raw builds and changes
+
+ 42 files changed, 152 insertions(+), 40 deletions(-)
+
+commit f14f61dacaac16abbb1569186ec260e90eb58f9c
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon Apr 11 14:56:07 2011 +0400
+
+    changed filename
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 5b6f23827b539a4d54467bc924327a8921ad681a
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon Apr 11 14:55:11 2011 +0400
+
+    example of data file for all your projects
+
+ 1 files changed, 7 insertions(+), 0 deletions(-)
+
+commit 740f798b41d49fdc2fde25341c18248985b52d06
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Sun Apr 10 13:52:11 2011 +0400
+
+    changed sub-project name to parce-git because i dont need to lunch scripts anymore
+
+ 19 files changed, 143 insertions(+), 141 deletions(-)
+
+commit 53784c6b2e4dd4bc602232c2b1825a41a372fbb0
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Sun Apr 10 13:47:43 2011 +0400
+
+    post-commit instead of scripts
+
+ 1 files changed, 12 insertions(+), 0 deletions(-)
+
+commit 75371f9583596fa032f391f4e26d52e14e3d0b04
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Thu Apr 7 14:32:37 2011 +0400
+
+    file to run script
+
+ 1 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 3effb91ff14e117dc403bc180acafaee22523970
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Thu Apr 7 14:32:25 2011 +0400
+
+    now script appends the stats.
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 3f2ea33331441fecc27c4ef3c8f3edb31178b9da
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 6 20:08:30 2011 +0400
+
+    added script
+
+ 21 files changed, 29 insertions(+), 26 deletions(-)
+
+commit 8d6c5a8d4a4d33d8bdc712713e0f9ae0bd4c1ad2
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 6 19:26:46 2011 +0400
+
+    script
+
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+commit ae8ae0df56cfc05609f90d461d6422c59c3b110a
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 6 19:24:10 2011 +0400
+
+    Added VS project to run srcipts
+
+ 63 files changed, 339 insertions(+), 0 deletions(-)
+
+commit b5861d4fc2a8d98ff3441e85fc707d4b9d84c9c7
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 6 17:58:33 2011 +0400
+
+    snack
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit ef0f37176693c21d903582cbc24b0bb9f2af35ab
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 6 16:48:14 2011 +0400
+
+    Readme
+
+ 1 files changed, 10 insertions(+), 3 deletions(-)
+
+commit 6873c91778c9051ea6170d75cd53307ea317b7b4
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 6 16:42:10 2011 +0400
+
+    Signed-off-by: Stals <stalsfromhell@gmail.com>
+    
+    README
+
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit 8d1f9371f4755368658d9b53c9a00b237dfc1f56
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 6 16:36:06 2011 +0400
+
+    Signed-off-by: Stals <stalsfromhell@gmail.com>
+    
+    readme edited
+
+ 1 files changed, 3 insertions(+), 1 deletions(-)
+
+commit c343589bb50a5bd6c38172b6600a60a6fc721988
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed Apr 6 16:27:36 2011 +0400
+
+    Signed-off-by: Stals <stalsfromhell@gmail.com>
+    
+    first commit
+
+ 1 files changed, 6 insertions(+), 0 deletions(-)
