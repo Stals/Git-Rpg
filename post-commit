@@ -1,12 +1,6 @@
 #!/bin/sh
-#
-# An example hook script that is called after a successful
-# commit is made.
-#
-# To enable this hook, rename this file to "post-commit".
 
-
-pwd > "C:\My Dropbox\Programming\BigProjects\C++\GitRPG\raw"
-git log --shortstat >> "C:\My Dropbox\Programming\BigProjects\C++\GitRPG\raw"
-
-
+cd "C:/My Dropbox/Programming/BigProjects/C++/GitRPG"
+pwd > "raw"
+git log --shortstat >> "raw"
+"C:/My Dropbox/Programming/BigProjects/C++/GitRPG/parse-raw.exe"
