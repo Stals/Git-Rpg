@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>349</width>
-    <height>220</height>
+    <width>368</width>
+    <height>209</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,11 +17,11 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string/>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QLabel" name="label">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Ignored">
@@ -34,10 +34,10 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="2" column="0">
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
-       <widget class="QLabel" name="label_5">
+       <widget class="QLabel" name="userName">
         <property name="font">
          <font>
           <family>Cooper Std Black</family>
@@ -57,7 +57,7 @@
       <item row="1" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="userLvl">
           <property name="font">
            <font>
             <family>Cooper Std Black</family>
@@ -67,7 +67,7 @@
            </font>
           </property>
           <property name="text">
-           <string>HUMAN Level 4</string>
+           <string>USER Level 4</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -75,7 +75,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_6">
+         <widget class="QLabel" name="userExp">
           <property name="font">
            <font>
             <family>Cooper Std Black</family>
@@ -94,29 +94,10 @@
         </item>
        </layout>
       </item>
-      <item row="2" column="0">
-       <widget class="QProgressBar" name="progressBar_3">
-        <property name="styleSheet">
-         <string notr="true">  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #44E823;}  </string>
-        </property>
-        <property name="value">
-         <number>35</number>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="textVisible">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
       <item row="3" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QLabel" name="label_2">
+         <widget class="QLabel" name="plusLvl">
           <property name="font">
            <font>
             <family>Cooper Std Black</family>
@@ -131,7 +112,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_7">
+         <widget class="QLabel" name="plusExp">
           <property name="font">
            <font>
             <family>Cooper Std Black</family>
@@ -150,29 +131,10 @@
         </item>
        </layout>
       </item>
-      <item row="4" column="0">
-       <widget class="QProgressBar" name="progressBar">
-        <property name="styleSheet">
-         <string notr="true">  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #3399FF;}  </string>
-        </property>
-        <property name="value">
-         <number>24</number>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="textVisible">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0">
+      <item row="6" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QLabel" name="label_3">
+         <widget class="QLabel" name="minusLvl">
           <property name="font">
            <font>
             <family>Cooper Std Black</family>
@@ -187,7 +149,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="label_8">
+         <widget class="QLabel" name="minusExp">
           <property name="font">
            <font>
             <family>Cooper Std Black</family>
@@ -206,13 +168,60 @@
         </item>
        </layout>
       </item>
-      <item row="6" column="0">
-       <widget class="QProgressBar" name="progressBar_2">
+      <item row="7" column="0">
+       <widget class="QProgressBar" name="minusBar">
         <property name="styleSheet">
          <string notr="true">  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #FF2929;}  </string>
         </property>
+        <property name="maximum">
+         <number>120</number>
+        </property>
         <property name="value">
-         <number>35</number>
+         <number>12</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="textVisible">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QProgressBar" name="plusBar">
+        <property name="styleSheet">
+         <string notr="true">  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #44E823;}  </string>
+        </property>
+        <property name="maximum">
+         <number>720</number>
+        </property>
+        <property name="value">
+         <number>250</number>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="textVisible">
+         <bool>true</bool>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QProgressBar" name="userBar">
+        <property name="styleSheet">
+         <string notr="true">  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #3399FF;}  </string>
+        </property>
+        <property name="maximum">
+         <number>1000</number>
+        </property>
+        <property name="value">
+         <number>755</number>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>

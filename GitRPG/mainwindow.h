@@ -16,6 +16,7 @@ public:
     ~MainWindow();
 
     void func();
+    void displayStats();//оборажает характеристике Юзера на форме.
 private:
     Ui::MainWindow *ui;
 };
