@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Wed 4. May 18:38:01 2011
+** Created: Mon 9. May 17:48:54 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -31,25 +31,25 @@ public:
     QGridLayout *gridLayout_2;
     QLabel *label;
     QGridLayout *gridLayout;
-    QLabel *label_5;
+    QLabel *userName;
     QHBoxLayout *horizontalLayout;
-    QLabel *label_4;
-    QLabel *label_6;
-    QProgressBar *progressBar_3;
+    QLabel *userLvl;
+    QLabel *userExp;
     QHBoxLayout *horizontalLayout_2;
-    QLabel *label_2;
-    QLabel *label_7;
-    QProgressBar *progressBar;
+    QLabel *plusLvl;
+    QLabel *plusExp;
     QHBoxLayout *horizontalLayout_3;
-    QLabel *label_3;
-    QLabel *label_8;
-    QProgressBar *progressBar_2;
+    QLabel *minusLvl;
+    QLabel *minusExp;
+    QProgressBar *minusBar;
+    QProgressBar *plusBar;
+    QProgressBar *userBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(349, 220);
+        MainWindow->resize(368, 209);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -69,113 +69,116 @@ public:
         sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy1);
 
-        gridLayout_2->addWidget(label, 0, 0, 1, 1);
+        gridLayout_2->addWidget(label, 1, 0, 1, 1);
 
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        label_5 = new QLabel(centralWidget);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
+        userName = new QLabel(centralWidget);
+        userName->setObjectName(QString::fromUtf8("userName"));
         QFont font;
         font.setFamily(QString::fromUtf8("Cooper Std Black"));
         font.setPointSize(11);
         font.setBold(true);
         font.setWeight(75);
-        label_5->setFont(font);
-        label_5->setAlignment(Qt::AlignCenter);
+        userName->setFont(font);
+        userName->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(label_5, 0, 0, 1, 1);
+        gridLayout->addWidget(userName, 0, 0, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label_4 = new QLabel(centralWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setFont(font);
-        label_4->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        userLvl = new QLabel(centralWidget);
+        userLvl->setObjectName(QString::fromUtf8("userLvl"));
+        userLvl->setFont(font);
+        userLvl->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        horizontalLayout->addWidget(label_4);
+        horizontalLayout->addWidget(userLvl);
 
-        label_6 = new QLabel(centralWidget);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setFont(font);
-        label_6->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        userExp = new QLabel(centralWidget);
+        userExp->setObjectName(QString::fromUtf8("userExp"));
+        userExp->setFont(font);
+        userExp->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout->addWidget(label_6);
+        horizontalLayout->addWidget(userExp);
 
 
         gridLayout->addLayout(horizontalLayout, 1, 0, 1, 1);
 
-        progressBar_3 = new QProgressBar(centralWidget);
-        progressBar_3->setObjectName(QString::fromUtf8("progressBar_3"));
-        progressBar_3->setStyleSheet(QString::fromUtf8("  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #44E823;}  "));
-        progressBar_3->setValue(35);
-        progressBar_3->setAlignment(Qt::AlignCenter);
-        progressBar_3->setTextVisible(true);
-        progressBar_3->setOrientation(Qt::Horizontal);
-
-        gridLayout->addWidget(progressBar_3, 2, 0, 1, 1);
-
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_2 = new QLabel(centralWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setFont(font);
+        plusLvl = new QLabel(centralWidget);
+        plusLvl->setObjectName(QString::fromUtf8("plusLvl"));
+        plusLvl->setFont(font);
 
-        horizontalLayout_2->addWidget(label_2);
+        horizontalLayout_2->addWidget(plusLvl);
 
-        label_7 = new QLabel(centralWidget);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
-        label_7->setFont(font);
-        label_7->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        plusExp = new QLabel(centralWidget);
+        plusExp->setObjectName(QString::fromUtf8("plusExp"));
+        plusExp->setFont(font);
+        plusExp->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_2->addWidget(label_7);
+        horizontalLayout_2->addWidget(plusExp);
 
 
         gridLayout->addLayout(horizontalLayout_2, 3, 0, 1, 1);
 
-        progressBar = new QProgressBar(centralWidget);
-        progressBar->setObjectName(QString::fromUtf8("progressBar"));
-        progressBar->setStyleSheet(QString::fromUtf8("  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #3399FF;}  "));
-        progressBar->setValue(24);
-        progressBar->setAlignment(Qt::AlignCenter);
-        progressBar->setTextVisible(true);
-        progressBar->setOrientation(Qt::Horizontal);
-
-        gridLayout->addWidget(progressBar, 4, 0, 1, 1);
-
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        label_3 = new QLabel(centralWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setFont(font);
+        minusLvl = new QLabel(centralWidget);
+        minusLvl->setObjectName(QString::fromUtf8("minusLvl"));
+        minusLvl->setFont(font);
 
-        horizontalLayout_3->addWidget(label_3);
+        horizontalLayout_3->addWidget(minusLvl);
 
-        label_8 = new QLabel(centralWidget);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
-        label_8->setFont(font);
-        label_8->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        minusExp = new QLabel(centralWidget);
+        minusExp->setObjectName(QString::fromUtf8("minusExp"));
+        minusExp->setFont(font);
+        minusExp->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout_3->addWidget(label_8);
-
-
-        gridLayout->addLayout(horizontalLayout_3, 5, 0, 1, 1);
-
-        progressBar_2 = new QProgressBar(centralWidget);
-        progressBar_2->setObjectName(QString::fromUtf8("progressBar_2"));
-        progressBar_2->setStyleSheet(QString::fromUtf8("  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #FF2929;}  "));
-        progressBar_2->setValue(35);
-        progressBar_2->setAlignment(Qt::AlignCenter);
-        progressBar_2->setTextVisible(true);
-        progressBar_2->setOrientation(Qt::Horizontal);
-
-        gridLayout->addWidget(progressBar_2, 6, 0, 1, 1);
+        horizontalLayout_3->addWidget(minusExp);
 
 
-        gridLayout_2->addLayout(gridLayout, 1, 0, 1, 1);
+        gridLayout->addLayout(horizontalLayout_3, 6, 0, 1, 1);
+
+        minusBar = new QProgressBar(centralWidget);
+        minusBar->setObjectName(QString::fromUtf8("minusBar"));
+        minusBar->setStyleSheet(QString::fromUtf8("  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #FF2929;}  "));
+        minusBar->setMaximum(120);
+        minusBar->setValue(12);
+        minusBar->setAlignment(Qt::AlignCenter);
+        minusBar->setTextVisible(true);
+        minusBar->setOrientation(Qt::Horizontal);
+
+        gridLayout->addWidget(minusBar, 7, 0, 1, 1);
+
+        plusBar = new QProgressBar(centralWidget);
+        plusBar->setObjectName(QString::fromUtf8("plusBar"));
+        plusBar->setStyleSheet(QString::fromUtf8("  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #44E823;}  "));
+        plusBar->setMaximum(720);
+        plusBar->setValue(250);
+        plusBar->setAlignment(Qt::AlignCenter);
+        plusBar->setTextVisible(true);
+        plusBar->setOrientation(Qt::Horizontal);
+
+        gridLayout->addWidget(plusBar, 5, 0, 1, 1);
+
+        userBar = new QProgressBar(centralWidget);
+        userBar->setObjectName(QString::fromUtf8("userBar"));
+        userBar->setStyleSheet(QString::fromUtf8("  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #3399FF;}  "));
+        userBar->setMaximum(1000);
+        userBar->setValue(755);
+        userBar->setAlignment(Qt::AlignCenter);
+        userBar->setTextVisible(true);
+        userBar->setOrientation(Qt::Horizontal);
+
+        gridLayout->addWidget(userBar, 2, 0, 1, 1);
+
+
+        gridLayout_2->addLayout(gridLayout, 2, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
 
@@ -186,15 +189,15 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0, QApplication::UnicodeUTF8));
+        MainWindow->setWindowTitle(QString());
         label->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
-        label_5->setText(QApplication::translate("MainWindow", "STALS", 0, QApplication::UnicodeUTF8));
-        label_4->setText(QApplication::translate("MainWindow", "HUMAN Level 4", 0, QApplication::UnicodeUTF8));
-        label_6->setText(QApplication::translate("MainWindow", "[755 / 1000]", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("MainWindow", "PLUS Level 5", 0, QApplication::UnicodeUTF8));
-        label_7->setText(QApplication::translate("MainWindow", "[250 / 720 ]", 0, QApplication::UnicodeUTF8));
-        label_3->setText(QApplication::translate("MainWindow", "MINUS Level 2", 0, QApplication::UnicodeUTF8));
-        label_8->setText(QApplication::translate("MainWindow", "[12 / 120]", 0, QApplication::UnicodeUTF8));
+        userName->setText(QApplication::translate("MainWindow", "STALS", 0, QApplication::UnicodeUTF8));
+        userLvl->setText(QApplication::translate("MainWindow", "USER Level 4", 0, QApplication::UnicodeUTF8));
+        userExp->setText(QApplication::translate("MainWindow", "[755 / 1000]", 0, QApplication::UnicodeUTF8));
+        plusLvl->setText(QApplication::translate("MainWindow", "PLUS Level 5", 0, QApplication::UnicodeUTF8));
+        plusExp->setText(QApplication::translate("MainWindow", "[250 / 720 ]", 0, QApplication::UnicodeUTF8));
+        minusLvl->setText(QApplication::translate("MainWindow", "MINUS Level 2", 0, QApplication::UnicodeUTF8));
+        minusExp->setText(QApplication::translate("MainWindow", "[12 / 120]", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
