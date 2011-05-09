@@ -18,7 +18,6 @@ public:
 
                 addPath(QDir::current().filePath("Stals"));
                 connect(this, SIGNAL(fileChanged(const QString&)), this, SLOT(fileChanged(const QString&)));
-               // qDebug() << "monitoring" << files();
 
         }
 
@@ -26,8 +25,6 @@ private slots:
         void fileChanged(const QString& path)
         {
             _w->func();
-               // qDebug() << "fileChanged" << path;
-               // qDebug() << "-->" << files();
         }
 };
 int main(int argc, char *argv[])
