@@ -51,5 +51,5 @@ void User::checkForLvls(){
         minus.maxExp*=(double)1.1;
       ++minus.lvl;
     }
-    //
+
 }

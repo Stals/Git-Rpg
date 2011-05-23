@@ -17,15 +17,15 @@ public:
     ~MainWindow();
     QTimer *progressBarTimer;
 
-    void func();
-    void displayStats();//оборажает характеристике Юзера на форме.
+    void func();//Функция вызывается чтобы проверить изменения и если они есть отобразить их на форме
+    void displayStats();//оборажает характеристики Пользователя на форме.
     std::pair<int,int> changedExp();//читает файл Stals, и если в нём есть изменения по кол-ву опыта, тогда возвращает true
 
 private:
     Ui::MainWindow *ui;
 
 private slots:
-    void increaseAll();
+    void increaseAll(); //Функция используется таймером для постепенного увеличения опыта
 
     void on_pushButton_clicked();
 };

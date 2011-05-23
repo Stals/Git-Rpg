@@ -5,7 +5,7 @@
 #include <QtCore>
 #include <QtDebug>
 #include <QObject>
-
+//Логика класса watcher заключается в том чтобы вызвать функцию func() , когда файл Stals будет изменен
 class Watcher : public QFileSystemWatcher
 {
         Q_OBJECT

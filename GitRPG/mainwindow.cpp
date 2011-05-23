@@ -47,7 +47,7 @@ void MainWindow::displayStats(){
 
     ui->userName->setText(user.name.c_str());
 
-    //User
+    //Joint
     ui->jointLvl->setText("Joint Level "+QString::number(user.joint.lvl));
     ui->jointExp->setText("[ "+QString::number(user.joint.exp)+" / "+QString::number(user.joint.maxExp)+" ]");
     ui->jointBar->setValue(user.joint.exp);
