@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon 9. May 17:48:54 2011
+** Created: Tue 10. May 19:16:04 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -20,6 +20,7 @@
 #include <QtGui/QLabel>
 #include <QtGui/QMainWindow>
 #include <QtGui/QProgressBar>
+#include <QtGui/QPushButton>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -44,6 +45,7 @@ public:
     QProgressBar *minusBar;
     QProgressBar *plusBar;
     QProgressBar *userBar;
+    QPushButton *pushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -69,7 +71,7 @@ public:
         sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy1);
 
-        gridLayout_2->addWidget(label, 1, 0, 1, 1);
+        gridLayout_2->addWidget(label, 2, 0, 1, 1);
 
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
@@ -178,7 +180,12 @@ public:
         gridLayout->addWidget(userBar, 2, 0, 1, 1);
 
 
-        gridLayout_2->addLayout(gridLayout, 2, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout, 3, 0, 1, 1);
+
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout_2->addWidget(pushButton, 1, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
 
@@ -192,12 +199,13 @@ public:
         MainWindow->setWindowTitle(QString());
         label->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
         userName->setText(QApplication::translate("MainWindow", "STALS", 0, QApplication::UnicodeUTF8));
-        userLvl->setText(QApplication::translate("MainWindow", "USER Level 4", 0, QApplication::UnicodeUTF8));
+        userLvl->setText(QApplication::translate("MainWindow", "Joint Level 4", 0, QApplication::UnicodeUTF8));
         userExp->setText(QApplication::translate("MainWindow", "[755 / 1000]", 0, QApplication::UnicodeUTF8));
-        plusLvl->setText(QApplication::translate("MainWindow", "PLUS Level 5", 0, QApplication::UnicodeUTF8));
+        plusLvl->setText(QApplication::translate("MainWindow", "Insertions (+) Level 5", 0, QApplication::UnicodeUTF8));
         plusExp->setText(QApplication::translate("MainWindow", "[250 / 720 ]", 0, QApplication::UnicodeUTF8));
-        minusLvl->setText(QApplication::translate("MainWindow", "MINUS Level 2", 0, QApplication::UnicodeUTF8));
+        minusLvl->setText(QApplication::translate("MainWindow", "Deleitions  (-)  Level 2", 0, QApplication::UnicodeUTF8));
         minusExp->setText(QApplication::translate("MainWindow", "[12 / 120]", 0, QApplication::UnicodeUTF8));
+        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
