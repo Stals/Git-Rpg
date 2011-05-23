@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Tue 10. May 19:16:04 2011
+** Created: Mon 23. May 20:22:28 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -34,8 +34,8 @@ public:
     QGridLayout *gridLayout;
     QLabel *userName;
     QHBoxLayout *horizontalLayout;
-    QLabel *userLvl;
-    QLabel *userExp;
+    QLabel *jointLvl;
+    QLabel *jointExp;
     QHBoxLayout *horizontalLayout_2;
     QLabel *plusLvl;
     QLabel *plusExp;
@@ -44,14 +44,14 @@ public:
     QLabel *minusExp;
     QProgressBar *minusBar;
     QProgressBar *plusBar;
-    QProgressBar *userBar;
+    QProgressBar *jointBar;
     QPushButton *pushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(368, 209);
+        MainWindow->resize(368, 238);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -91,19 +91,19 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        userLvl = new QLabel(centralWidget);
-        userLvl->setObjectName(QString::fromUtf8("userLvl"));
-        userLvl->setFont(font);
-        userLvl->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        jointLvl = new QLabel(centralWidget);
+        jointLvl->setObjectName(QString::fromUtf8("jointLvl"));
+        jointLvl->setFont(font);
+        jointLvl->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
-        horizontalLayout->addWidget(userLvl);
+        horizontalLayout->addWidget(jointLvl);
 
-        userExp = new QLabel(centralWidget);
-        userExp->setObjectName(QString::fromUtf8("userExp"));
-        userExp->setFont(font);
-        userExp->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        jointExp = new QLabel(centralWidget);
+        jointExp->setObjectName(QString::fromUtf8("jointExp"));
+        jointExp->setFont(font);
+        jointExp->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        horizontalLayout->addWidget(userExp);
+        horizontalLayout->addWidget(jointExp);
 
 
         gridLayout->addLayout(horizontalLayout, 1, 0, 1, 1);
@@ -168,16 +168,16 @@ public:
 
         gridLayout->addWidget(plusBar, 5, 0, 1, 1);
 
-        userBar = new QProgressBar(centralWidget);
-        userBar->setObjectName(QString::fromUtf8("userBar"));
-        userBar->setStyleSheet(QString::fromUtf8("  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #3399FF;}  "));
-        userBar->setMaximum(1000);
-        userBar->setValue(755);
-        userBar->setAlignment(Qt::AlignCenter);
-        userBar->setTextVisible(true);
-        userBar->setOrientation(Qt::Horizontal);
+        jointBar = new QProgressBar(centralWidget);
+        jointBar->setObjectName(QString::fromUtf8("jointBar"));
+        jointBar->setStyleSheet(QString::fromUtf8("  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #3399FF;}  "));
+        jointBar->setMaximum(1000);
+        jointBar->setValue(755);
+        jointBar->setAlignment(Qt::AlignCenter);
+        jointBar->setTextVisible(true);
+        jointBar->setOrientation(Qt::Horizontal);
 
-        gridLayout->addWidget(userBar, 2, 0, 1, 1);
+        gridLayout->addWidget(jointBar, 2, 0, 1, 1);
 
 
         gridLayout_2->addLayout(gridLayout, 3, 0, 1, 1);
@@ -199,8 +199,8 @@ public:
         MainWindow->setWindowTitle(QString());
         label->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
         userName->setText(QApplication::translate("MainWindow", "STALS", 0, QApplication::UnicodeUTF8));
-        userLvl->setText(QApplication::translate("MainWindow", "Joint Level 4", 0, QApplication::UnicodeUTF8));
-        userExp->setText(QApplication::translate("MainWindow", "[755 / 1000]", 0, QApplication::UnicodeUTF8));
+        jointLvl->setText(QApplication::translate("MainWindow", "Joint Level 4", 0, QApplication::UnicodeUTF8));
+        jointExp->setText(QApplication::translate("MainWindow", "[755 / 1000]", 0, QApplication::UnicodeUTF8));
         plusLvl->setText(QApplication::translate("MainWindow", "Insertions (+) Level 5", 0, QApplication::UnicodeUTF8));
         plusExp->setText(QApplication::translate("MainWindow", "[250 / 720 ]", 0, QApplication::UnicodeUTF8));
         minusLvl->setText(QApplication::translate("MainWindow", "Deleitions  (-)  Level 2", 0, QApplication::UnicodeUTF8));

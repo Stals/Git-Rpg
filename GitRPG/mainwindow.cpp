@@ -39,12 +39,6 @@ void MainWindow::func(){
   }
 
 
-    //в таймере важно постоянно перерисовывать эелементы, также теоритически в таймере можно стартовать быстро а потом замедлять скорость чтобы под конец не так быстро прибавлялось. ( скорость зависит от того сколько осталось дабавить)
-
-    //запустить таймеры (начать увеличивать со старых до новых)
-    //когда делается levelup этим занимается другая функция чтобы она могла давать ачивки и расчитывать всю экспе и тп внутри себя.
-    //Но само увеличение по чутку идёт в отдельных таймерах
-
     //+ внутри таймеров могут появиться сообщения в трей, так что нужно начать таймер который отображает их.
     //! TODO может можно сделать эксепшн типа события, которое может поймать таймер и только тогда показывать сообщения  в трей
     //(чтобы он проверял не каждые N секунд есть ли что в queue, а делал если туда что-то добавилось)
@@ -54,10 +48,10 @@ void MainWindow::displayStats(){
     ui->userName->setText(user.name.c_str());
 
     //User
-    ui->userLvl->setText("Joint Level "+QString::number(user.joint.lvl));
-    ui->userExp->setText("[ "+QString::number(user.joint.exp)+" / "+QString::number(user.joint.maxExp)+" ]");
-    ui->userBar->setValue(user.joint.exp);
-    ui->userBar->setMaximum(user.joint.maxExp);
+    ui->jointLvl->setText("Joint Level "+QString::number(user.joint.lvl));
+    ui->jointExp->setText("[ "+QString::number(user.joint.exp)+" / "+QString::number(user.joint.maxExp)+" ]");
+    ui->jointBar->setValue(user.joint.exp);
+    ui->jointBar->setMaximum(user.joint.maxExp);
     //Plus
     ui->plusLvl->setText("Insertions (+) Level"+QString::number(user.plus.lvl));
     ui->plusExp->setText("[ "+QString::number(user.plus.exp)+" / "+QString::number(user.plus.maxExp)+" ]");
@@ -94,13 +88,12 @@ std::pair<int,int> MainWindow::changedExp(){
     if((plus>user.plus.exp)||(minus>user.minus.exp)){
         joint.first=plus;
         joint.second=minus;
-      //  ui->label->setText("tyt1");
+
         return joint;
     }else{
-        ui->label->setText(QString::number(plus)+" "+QString::number(minus));
         joint.first=-1;
         joint.second=-1;
-       // ui->label->setText("tyt2");
+
         return joint;
     }
 
@@ -108,7 +101,11 @@ std::pair<int,int> MainWindow::changedExp(){
 
 void MainWindow::increaseAll(){
 
-    while((user.plus.exp<newExp.first)||(user.minus.exp<newExp.second)){//||(user.joint.exp<(newExp.first+newExp.second))){
+    while((user.plus.exp<newExp.first)||(user.minus.exp<newExp.second)||(user.joint.exp<(newExp.first+newExp.second))){
+        if(user.joint.exp<(newExp.first+newExp.second)){
+            ++user.joint.exp;
+            ui->jointBar->setValue(user.joint.exp);
+        }
         if(user.plus.exp<newExp.first){
             ++user.plus.exp;
             ui->plusBar->setValue(user.plus.exp);
