@@ -67,7 +67,7 @@
            </font>
           </property>
           <property name="text">
-           <string>USER Level 4</string>
+           <string>Joint Level 4</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -107,7 +107,7 @@
            </font>
           </property>
           <property name="text">
-           <string>PLUS Level 5</string>
+           <string>Insertions (+) Level 5</string>
           </property>
          </widget>
         </item>
@@ -144,7 +144,7 @@
            </font>
           </property>
           <property name="text">
-           <string>MINUS Level 2</string>
+           <string>Deleitions  (-)  Level 2</string>
           </property>
          </widget>
         </item>
