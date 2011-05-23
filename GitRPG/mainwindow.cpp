@@ -11,7 +11,15 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     //TODO: ћожет при отображении старых статов тоже делать это таймером, всмысле полоска едет и опыт заполн€етс€, от нул€ до того что щас( но не мен€€ уровень). ѕосле этого если есть файл Stals с изменени€ми, можно выдать сообщение в трей типо, о новые данные, щас € всЄ сделаю и начинает заполн€ть...
     //!!!Ќу как минимум после включени€ если есть, то нужно давать сообщени€ о том что € вижу что есть новое( наверно это просто в func записать, чтобы он выдавать сообщение в трей каждый раз когда он начинает увеличивать на форме.)
+
+    jointTimer = new QTimer(this);
+    connect(jointTimer, SIGNAL(timeout()),this,SLOT(increaseJoint()));
+    plusTimer = new QTimer(this);
+    connect(plusTimer, SIGNAL(timeout()),this,SLOT(increasePlus()));
+    minusTimer = new QTimer(this);
+    connect(plusTimer, SIGNAL(timeout()),this,SLOT(increaseMinus()));
     displayStats();
+
     //“ут мы читаем файл Stats.grpg и храним в программе. ( после чего запустим func() чтобы убедитьс€ не изменилось ли чего)
 
 
@@ -33,10 +41,11 @@ void MainWindow::func(){
     std::pair<int,int> joint;//плюс и минус полученные из файла Stals
     joint=changedExp();
     if(joint.first!=-1){//если были изменени€
-
-        ui->userName->setText("Works");
-
-
+        //TODO: дать сообщение в трей что по€вились новые данные и щас € всЄ сделаю.
+        //тогда мы должны стартовать таймеры
+    jointTimer->start(10);
+    plusTimer->start(10);
+    minusTimer->start(10);
   }
 
 
@@ -101,6 +110,9 @@ std::pair<int,int> MainWindow::changedExp(){
     }
 
 }
+void MainWindow::increaseJoint(){}
+void MainWindow::increasePlus(){}
+void MainWindow::increaseMinus(){}
 void MainWindow::on_pushButton_clicked()
 {
     user.joint.exp+=1;
