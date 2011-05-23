@@ -40,15 +40,15 @@ User::~User(){
 }
 void User::checkForLvls(){
     if(joint.exp>=joint.maxExp){
-        joint.maxExp*=2;
+        joint.maxExp*=(double)1.1;
       ++joint.lvl;
     }
     if(plus.exp>=plus.maxExp){
-        plus.maxExp*=2;
+        plus.maxExp*=(double)1.1;
       ++plus.lvl;
     }
     if(minus.exp>=minus.maxExp){
-        minus.maxExp*=2;
+        minus.maxExp*=(double)1.1;
       ++minus.lvl;
     }
     //
