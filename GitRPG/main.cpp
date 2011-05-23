@@ -30,7 +30,7 @@ private slots:
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-MainWindow w;
+    MainWindow w;
     Watcher wa(&w);
     w.show();
 

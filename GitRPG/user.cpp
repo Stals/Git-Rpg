@@ -5,9 +5,9 @@ User::User()
      std::ifstream f("Stats.grpg");
      f>>name;
 
-     f>>user.lvl;
-     f>>user.exp;
-     f>>user.maxExp;
+     f>>joint.lvl;
+     f>>joint.exp;
+     f>>joint.maxExp;
 
      f>>plus.lvl;
      f>>plus.exp;
@@ -23,9 +23,9 @@ User::~User(){
     std::ofstream f("Stats.grpg");
     f<<name<<std::endl;
 
-    f<<user.lvl<<std::endl;
-    f<<user.exp<<std::endl;
-    f<<user.maxExp<<std::endl;
+    f<<joint.lvl<<std::endl;
+    f<<joint.exp<<std::endl;
+    f<<joint.maxExp<<std::endl;
 
     f<<plus.lvl<<std::endl;
     f<<plus.exp<<std::endl;

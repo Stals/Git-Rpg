@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "user.h"
+#include <fstream>
+
 static User user;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -27,9 +29,18 @@ MainWindow::~MainWindow()
 }
 void MainWindow::func(){
     ui->label->setText("ok");
-//прочитать файл Stals и сравнить изменения с тем что щас есть,
+    //Если измения в опыте влияют начать увеличение
+    std::pair<int,int> joint;//плюс и минус полученные из файла Stals
+    joint=changedExp();
+    if(joint.first!=-1){//если были изменения
 
-    //в таймере важно постоянно перерисовывать эелементы
+        ui->userName->setText("Works");
+
+
+  }
+
+
+    //в таймере важно постоянно перерисовывать эелементы, также теоритически в таймере можно стартовать быстро а потом замедлять скорость чтобы под конец не так быстро прибавлялось. ( скорость зависит от того сколько осталось дабавить)
 
     //запустить таймеры (начать увеличивать со старых до новых)
     //когда делается levelup этим занимается другая функция чтобы она могла давать ачивки и расчитывать всю экспе и тп внутри себя.
@@ -44,25 +55,55 @@ void MainWindow::displayStats(){
     ui->userName->setText(user.name.c_str());
 
     //User
-    ui->userLvl->setText("User Level "+QString::number(user.user.lvl));
-    ui->userExp->setText("[ "+QString::number(user.user.exp)+" / "+QString::number(user.user.maxExp)+" ]");
-    ui->userBar->setValue(user.user.exp);
-    ui->userBar->setMaximum(user.user.maxExp);
+    ui->userLvl->setText("Joint Level "+QString::number(user.joint.lvl));
+    ui->userExp->setText("[ "+QString::number(user.joint.exp)+" / "+QString::number(user.joint.maxExp)+" ]");
+    ui->userBar->setValue(user.joint.exp);
+    ui->userBar->setMaximum(user.joint.maxExp);
     //Plus
-    ui->plusLvl->setText("Plus Level "+QString::number(user.plus.lvl));
+    ui->plusLvl->setText("Insertions (+) Level"+QString::number(user.plus.lvl));
     ui->plusExp->setText("[ "+QString::number(user.plus.exp)+" / "+QString::number(user.plus.maxExp)+" ]");
     ui->plusBar->setValue(user.plus.exp);
     ui->plusBar->setMaximum(user.plus.maxExp);
     //Minus
-    ui->minusLvl->setText("Minus Level "+QString::number(user.minus.lvl));
+    ui->minusLvl->setText("Deleitions  (-) Level"+QString::number(user.minus.lvl));
     ui->minusExp->setText("[ "+QString::number(user.minus.exp)+" / "+QString::number(user.minus.maxExp)+" ]");
     ui->minusBar->setValue(user.minus.exp);
     ui->minusBar->setMaximum(user.minus.maxExp);
 }
+std::pair<int,int> MainWindow::changedExp(){
+//Читаем файл Stals и сравниваем с тем что есть в User
+//Для этого нам нужно сложить все минусы и плюсы из Stals
+    int plus=0;
+    int minus=0;
+    int numberOfProjects;
+    std::string projectName;
+    int buf;
 
+    std::ifstream f("Stals");
+
+    f>>numberOfProjects;
+    for(int i=0;i<numberOfProjects;++i){
+        f>>projectName;
+        f>>buf; plus+=buf;
+        f>>buf; minus+=buf;
+    }
+    std::pair<int,int> joint;
+
+
+    if((plus>user.plus.exp)||(minus>user.minus.exp)){
+        joint.first=plus;
+        joint.second=minus;
+        return joint;
+    }else{
+        joint.first=-1;
+        joint.second=-1;
+        return joint;
+    }
+
+}
 void MainWindow::on_pushButton_clicked()
 {
-    user.user.exp+=1;
+    user.joint.exp+=1;
     user.plus.exp+=1;
     user.minus.exp+=1;
    displayStats();

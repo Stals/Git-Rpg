@@ -14,7 +14,7 @@ public:
     User(); //загружает данные из файла Stats.grpg
     ~User();//Вызывается при заверщении программы, сохраняет статистики обратно в Stats.grpg
     std::string name;
-    Stats user;
+    Stats joint;
     Stats plus;
     Stats minus;
 

@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include <map>
 #include <QMainWindow>
 
 namespace Ui {
@@ -17,6 +17,7 @@ public:
 
     void func();
     void displayStats();//оборажает характеристике ёзера на форме.
+    std::pair<int,int> changedExp();//читает файл Stals, и если в нЄм есть изменени€ по кол-ву опыта, тогда возвращает true
 private:
     Ui::MainWindow *ui;
 
