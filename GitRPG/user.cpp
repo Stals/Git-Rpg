@@ -38,3 +38,18 @@ User::~User(){
     f.close();
 
 }
+void User::checkForLvls(){
+    if(joint.exp>=joint.maxExp){
+        joint.maxExp*=2;
+      ++joint.lvl;
+    }
+    if(plus.exp>=plus.maxExp){
+        plus.maxExp*=2;
+      ++plus.lvl;
+    }
+    if(minus.exp>=minus.maxExp){
+        minus.maxExp*=2;
+      ++minus.lvl;
+    }
+    //
+}

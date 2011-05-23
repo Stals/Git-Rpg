@@ -2,7 +2,8 @@
 #include "ui_mainwindow.h"
 #include "user.h"
 #include <fstream>
-
+#include <windows.h>
+std::pair<int,int>newExp;//плюс и минус полученные из файла Stals
 static User user;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -12,13 +13,11 @@ MainWindow::MainWindow(QWidget *parent) :
     //TODO: ћожет при отображении старых статов тоже делать это таймером, всмысле полоска едет и опыт заполн€етс€, от нул€ до того что щас( но не мен€€ уровень). ѕосле этого если есть файл Stals с изменени€ми, можно выдать сообщение в трей типо, о новые данные, щас € всЄ сделаю и начинает заполн€ть...
     //!!!Ќу как минимум после включени€ если есть, то нужно давать сообщени€ о том что € вижу что есть новое( наверно это просто в func записать, чтобы он выдавать сообщение в трей каждый раз когда он начинает увеличивать на форме.)
 
-    jointTimer = new QTimer(this);
-    connect(jointTimer, SIGNAL(timeout()),this,SLOT(increaseJoint()));
-    plusTimer = new QTimer(this);
-    connect(plusTimer, SIGNAL(timeout()),this,SLOT(increasePlus()));
-    minusTimer = new QTimer(this);
-    connect(plusTimer, SIGNAL(timeout()),this,SLOT(increaseMinus()));
+    progressBarTimer = new QTimer(this);
+    connect(progressBarTimer, SIGNAL(timeout()),this,SLOT(increaseAll()));
+
     displayStats();
+   func();
 
     //“ут мы читаем файл Stats.grpg и храним в программе. ( после чего запустим func() чтобы убедитьс€ не изменилось ли чего)
 
@@ -38,14 +37,15 @@ MainWindow::~MainWindow()
 void MainWindow::func(){
     ui->label->setText("ok");
     //≈сли измени€ в опыте вли€ют начать увеличение
-    std::pair<int,int> joint;//плюс и минус полученные из файла Stals
-    joint=changedExp();
-    if(joint.first!=-1){//если были изменени€
+
+   newExp=changedExp();
+
+    if(newExp.first!=-1){//если были изменени€
         //TODO: дать сообщение в трей что по€вились новые данные и щас € всЄ сделаю.
         //тогда мы должны стартовать таймеры
-    jointTimer->start(10);
-    plusTimer->start(10);
-    minusTimer->start(10);
+        ui->label->setText("StartTimers");
+    progressBarTimer->start(1);
+
   }
 
 
@@ -88,11 +88,13 @@ std::pair<int,int> MainWindow::changedExp(){
     std::string projectName;
     int buf;
 
+    std::string p;
     std::ifstream f("Stals");
 
-    f>>numberOfProjects;
+   f>>numberOfProjects;
     for(int i=0;i<numberOfProjects;++i){
-        f>>projectName;
+    std::getline(f,projectName);
+    std::getline(f,projectName);
         f>>buf; plus+=buf;
         f>>buf; minus+=buf;
     }
@@ -102,21 +104,41 @@ std::pair<int,int> MainWindow::changedExp(){
     if((plus>user.plus.exp)||(minus>user.minus.exp)){
         joint.first=plus;
         joint.second=minus;
+      //  ui->label->setText("tyt1");
         return joint;
     }else{
+        ui->label->setText(QString::number(plus)+" "+QString::number(minus));
         joint.first=-1;
         joint.second=-1;
+       // ui->label->setText("tyt2");
         return joint;
     }
 
 }
-void MainWindow::increaseJoint(){}
-void MainWindow::increasePlus(){}
-void MainWindow::increaseMinus(){}
+
+void MainWindow::increaseAll(){
+
+    while((user.plus.exp<newExp.first)||(user.minus.exp<newExp.second)){//||(user.joint.exp<(newExp.first+newExp.second))){
+        if(user.plus.exp<newExp.first){
+            ++user.plus.exp;
+            ui->plusBar->setValue(user.plus.exp);
+        }
+        if(user.minus.exp<newExp.second){
+            ++user.minus.exp;
+            ui->minusBar->setValue(user.minus.exp);
+
+        }
+    user.checkForLvls();
+    displayStats();
+    Sleep(100);
+    }
+}
+//TODOполучаетс€ еще нужен стат minimumExp это опыт который был нужнен на прошлый уровень, вначале он =0, и используетс€ дл€ того чтобы вычитать из текущего опыта минимальный, и это и будет value дл€ progressbara , также вычитаем его из maximumExp и это ставим как maximumValue
 void MainWindow::on_pushButton_clicked()
 {
-    user.joint.exp+=1;
-    user.plus.exp+=1;
-    user.minus.exp+=1;
+   ++user.joint.exp;
+   ++user.plus.exp;
+   ++user.minus.exp;
+   user.checkForLvls();
    displayStats();
 }
