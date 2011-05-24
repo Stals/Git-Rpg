@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>368</width>
-    <height>209</height>
+    <height>238</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -57,7 +57,7 @@
       <item row="1" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QLabel" name="userLvl">
+         <widget class="QLabel" name="jointLvl">
           <property name="font">
            <font>
             <family>Cooper Std Black</family>
@@ -75,7 +75,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="userExp">
+         <widget class="QLabel" name="jointExp">
           <property name="font">
            <font>
             <family>Cooper Std Black</family>
@@ -213,7 +213,7 @@
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QProgressBar" name="userBar">
+       <widget class="QProgressBar" name="jointBar">
         <property name="styleSheet">
          <string notr="true">  QProgressBar {color:black; border: 0.5px solid grey; border-radius: 5px;} QProgressBar::chunk {background-color: #3399FF;}  </string>
         </property>
