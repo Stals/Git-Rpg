@@ -10,15 +10,10 @@ Also this system can track several people and make rating.
 At the begining i will make it just for one person and his local repos. Because otherwise it would a lot of work, and if nobody needs this , there is no scence. We'll see.
 
 IDEAS:
+* Tray icon and notifications
 * Achievements
 * Rating
 
-TODO:
-* QT form
-* script should launch parseRaw (parse-raw.exe) 
-* (done) finish the consept
-* (done) write first script to gather information from all repos 
-* (done) use gitHub issues system
 
 Files:
 * raw - is a file made of git coomit history to track insertions and deletions (for 1 project)
