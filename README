@@ -19,3 +19,10 @@ TODO:
 * (done) finish the consept
 * (done) write first script to gather information from all repos 
 * (done) use gitHub issues system
+
+Files:
+* raw - is a file made of git coomit history to track insertions and deletions (for 1 project)
+* Stals - file made of all raw file for all your projects ( This file is updated each time you make a commit)
+* post-commit - file used by git after commit to make raw file and call parse-raw.exe
+* parse-raw.exe - this file parse raw every time it is made and adds stats to Stals
+* Stats.grpg - stores stats for GitRPG programm itself. This is updated every time you lunch GitRPG.exe
