@@ -26,3 +26,4 @@ Files:
 * post-commit - file used by git after commit to make raw file and call parse-raw.exe
 * parse-raw.exe - this file parse raw every time it is made and adds stats to Stals
 * Stats.grpg - stores stats for GitRPG programm itself. This is updated every time you lunch GitRPG.exe
+* GitRPG.exe - main program that shows all your stats
