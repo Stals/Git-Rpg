@@ -117,7 +117,7 @@ void MainWindow::increaseAll(){
         }
     user.checkForLvls();
     displayStats();
-    Sleep(100);
+    Sleep(5);
     }
     progressBarTimer->stop();
 }

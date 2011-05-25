@@ -1,7 +1,6 @@
 #ifndef USER_H
 #define USER_H
 #include <string>
-//! TODO получается еще нужен стат minimumExp это опыт который был нужнен на прошлый уровень, вначале он =0, и используется для того чтобы вычитать из текущего опыта минимальный, и это и будет value для progressbara , также вычитаем его из maximumExp и это ставим как maximumValue
 
 struct Stats{
 
