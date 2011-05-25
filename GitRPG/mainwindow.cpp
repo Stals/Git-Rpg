@@ -38,7 +38,7 @@ void MainWindow::func(){
 
   }
 
-
+ displayStats();
     //+ внутри таймеров могут появиться сообщения в трей, так что нужно начать таймер который отображает их.
     //! TODO может можно сделать эксепшн типа события, которое может поймать таймер и только тогда показывать сообщения  в трей
     //(чтобы он проверял не каждые N секунд есть ли что в queue, а делал если туда что-то добавилось)
@@ -53,12 +53,12 @@ void MainWindow::displayStats(){
     ui->jointBar->setValue(user.joint.exp-user.joint.lastExp);
     ui->jointBar->setMaximum(user.joint.maxExp-user.joint.lastExp);
     //Plus
-    ui->plusLvl->setText("Insertions (+) Level"+QString::number(user.plus.lvl));
+    ui->plusLvl->setText("Insertions (+) Level "+QString::number(user.plus.lvl));
     ui->plusExp->setText("[ "+QString::number(user.plus.exp-user.plus.lastExp)+" / "+QString::number(user.plus.maxExp-user.plus.lastExp)+" ]");
     ui->plusBar->setValue(user.plus.exp-user.plus.lastExp);
     ui->plusBar->setMaximum(user.plus.maxExp-user.plus.lastExp);
     //Minus
-    ui->minusLvl->setText("Deleitions  (-) Level"+QString::number(user.minus.lvl));
+    ui->minusLvl->setText("Deleitions  (-) Level "+QString::number(user.minus.lvl));
     ui->minusExp->setText("[ "+QString::number(user.minus.exp-user.minus.lastExp)+" / "+QString::number(user.minus.maxExp-user.minus.lastExp)+" ]");
     ui->minusBar->setValue(user.minus.exp-user.minus.lastExp);
     ui->minusBar->setMaximum(user.minus.maxExp-user.minus.lastExp);
