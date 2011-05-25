@@ -1,4 +1,302 @@
 /c/My Dropbox/Programming/BigProjects/C++/GitRPG
+commit 9861ef03330b426a057219b5c61e2496cb756333
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 25 20:42:08 2011 +0400
+
+    new level starts with 0 (100%)
+
+ 5 files changed, 12 insertions(+), 13 deletions(-)
+
+commit e49193cc8aea425dc726494906e9e800163b3637
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 25 18:17:36 2011 +0400
+
+    now label show 0 exp each lvl
+
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit 84cfe3638f3c71c097e3283d911f3db676a7f423
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 25 18:11:42 2011 +0400
+
+    todo completed
+
+ 2 files changed, 1 insertions(+), 2 deletions(-)
+
+commit 892568774d6e37e406f584786b2d29ee35bc67d5
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 25 18:08:10 2011 +0400
+
+    fixed problem with progressBars
+
+ 3 files changed, 14 insertions(+), 9 deletions(-)
+
+commit 96992373bc404a345633c8f0f18714677ddb8e1b
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue May 24 21:47:59 2011 +0400
+
+    now it should!! work fine with not gitRPG repos ( i think i broke it in a previous post-commit change)
+
+ 1 files changed, 2 insertions(+), 3 deletions(-)
+
+commit 6b3f15bd60ff1ac292d9e2c51a4c001432a3bacd
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue May 24 21:45:45 2011 +0400
+
+    post-commit test
+
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+commit 385b8e5fb191f65d08362f9e6d4a4844eacf5984
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue May 24 21:32:36 2011 +0400
+
+    readme again
+
+ 1 files changed, 1 insertions(+), 6 deletions(-)
+
+commit 5b34e116aec87719b1ce3a5153449cfd67ce2efb
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue May 24 21:31:06 2011 +0400
+
+    readme (GitRPG.exe)
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+commit 2003cad8de5ba1167a7ede571549df7636a6f3ac
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Tue May 24 21:29:44 2011 +0400
+
+    readme changes (file description)
+
+ 1 files changed, 7 insertions(+), 0 deletions(-)
+
+commit 404e039a1b6ac7a6bb265eb6f21fa603132abd44
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 20:35:46 2011 +0400
+
+    added comments
+
+ 5 files changed, 7 insertions(+), 7 deletions(-)
+
+commit ac13d1ee542b93740d3fd2dbf41fe5f65e2c3136
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 20:30:35 2011 +0400
+
+    deleted old comments
+
+ 2 files changed, 37 insertions(+), 40 deletions(-)
+
+commit 431f7050985371ec7cd59ec527322e51c38b098b
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 20:19:49 2011 +0400
+
+    comments added
+
+ 2 files changed, 11 insertions(+), 18 deletions(-)
+
+commit 52b4c296c8c07ce6e3663e2687d2702d7b3eeafe
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 20:07:02 2011 +0400
+
+    fixed Stals reading bug
+    LevelUp func added
+    Timers added
+
+ 4 files changed, 65 insertions(+), 28 deletions(-)
+
+commit ffbd73d262b3d03fdf36cd1956dbd7568ba88750
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:39:12 2011 +0400
+
+    testing
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 5b8965e5e5069cf9d9e59fba45343e8fa4dbc1e2
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:33:08 2011 +0400
+
+    test ....
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 0bc5297488efb35324920ec619ecb981d9143f33
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:22:54 2011 +0400
+
+    test ...
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 720a5bd1fc43f00abeb745719e39531b8ce2d3c4
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:14:15 2011 +0400
+
+    test..
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 6b31363f64cfdde0459d3507c9129a951e9074bf
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:11:19 2011 +0400
+
+    test 6
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 1e55a3902cdbf88a7381d67b846ad183c57ad739
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:09:32 2011 +0400
+
+    test 5
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 568cbdbd98da6b680e54bb99e5b93aee2be16548
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:06:03 2011 +0400
+
+    test 4
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit a4feb8a1fbb290e38848d9759d2ca765d3027f15
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:05:12 2011 +0400
+
+    test 3
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 1b88c08c978f252350d5206e9629bb79aac783dd
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:02:38 2011 +0400
+
+    timers test 2
+
+ 1 files changed, 0 insertions(+), 1 deletions(-)
+
+commit 2e70d320bc99bf801854e5c8f5aa175f1cea1642
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 19:00:38 2011 +0400
+
+    timers test
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 4ef70c90289a247f6a5710706dadb640face760b
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 18:52:56 2011 +0400
+
+    timers prototype
+
+ 2 files changed, 24 insertions(+), 5 deletions(-)
+
+commit 954f08a41100c3850ca64803810a8c9c7e5cba46
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 18:11:49 2011 +0400
+
+    changedExp func works
+
+ 5 files changed, 60 insertions(+), 18 deletions(-)
+
+commit 6683d4218f03b1b950b51c94295d2f840f6f9ee8
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 18:10:24 2011 +0400
+
+    one more test
+
+ 1 files changed, 14 insertions(+), 6 deletions(-)
+
+commit ecd900fea0ca2ca2875f6463223410e0c2f27ea4
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 18:06:14 2011 +0400
+
+    renamed
+
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+commit a25de94ecfc745b9747b6a148580287fe034973f
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 23 18:03:36 2011 +0400
+
+    changedExp test
+
+ 1 files changed, 4 insertions(+), 0 deletions(-)
+
+commit fe9f391a6787d18cf8a04f46a22e30a7f4f9e670
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 9 18:33:20 2011 +0400
+
+    user.h refactor
+
+ 6 files changed, 78 insertions(+), 40 deletions(-)
+
+commit 2e74384b1c0f85997c9f68eb56d7434ec56c14f5
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 9 17:54:05 2011 +0400
+
+    test build
+
+ 7 files changed, 119 insertions(+), 94 deletions(-)
+
+commit e5bbf7bf8ef354f4dd8c1203147bf72675549283
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Mon May 9 17:53:15 2011 +0400
+
+    User class and displayStats func added
+
+ 6 files changed, 144 insertions(+), 56 deletions(-)
+
+commit 01941a8149aab162cb121d17b777c215d91b9be2
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Fri May 6 20:26:40 2011 +0400
+
+    how-to ideas
+
+ 2 files changed, 18 insertions(+), 0 deletions(-)
+
+commit 4d0aa717ccb1d55f6f4ce8b6adc44c64b3d179c9
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 18:40:36 2011 +0400
+
+    form created
+
+ 5 files changed, 411 insertions(+), 98 deletions(-)
+
+commit c4a986c50681183a2b17aa3c9eed7149d712c875
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:56:30 2011 +0400
+
+    oldthings
+
+ 6 files changed, 4 insertions(+), 4 deletions(-)
+
+commit e9ef3a269b358ee06ea85385bc13768ec5783fe5
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:55:47 2011 +0400
+
+    awesome , it works , now i just need to finish qt project
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+commit 18fc75b34b9d076c91251c2336f11704dc9eb656
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:54:46 2011 +0400
+
+    qt filewatcher test
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+commit f770c34e4235fa1c5f0b0b6d95b31225ebd20f71
+Author: Stals <stalsfromhell@gmail.com>
+Date:   Wed May 4 16:50:16 2011 +0400
+
+    yep, it works
+
+ 2 files changed, 13 insertions(+), 1 deletions(-)
+
 commit 80759d4cd08373110534418537baaca3d0020324
 Author: Stals <stalsfromhell@gmail.com>
 Date:   Wed May 4 16:49:42 2011 +0400
