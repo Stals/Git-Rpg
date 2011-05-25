@@ -6,8 +6,10 @@
 struct Stats{
 
     int lvl;
+    int lastExp;//опыт предведущего уровня (на первой уровне = 0)
     int exp;
     int maxExp;
+    Stats():lastExp(0){}
 };
 class User
 {

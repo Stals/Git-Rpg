@@ -50,18 +50,18 @@ void MainWindow::displayStats(){
     //Joint
     ui->jointLvl->setText("Joint Level "+QString::number(user.joint.lvl));
     ui->jointExp->setText("[ "+QString::number(user.joint.exp)+" / "+QString::number(user.joint.maxExp)+" ]");
-    ui->jointBar->setValue(user.joint.exp);
-    ui->jointBar->setMaximum(user.joint.maxExp);
+    ui->jointBar->setValue(user.joint.exp-user.joint.lastExp);
+    ui->jointBar->setMaximum(user.joint.maxExp-user.joint.lastExp);
     //Plus
     ui->plusLvl->setText("Insertions (+) Level"+QString::number(user.plus.lvl));
     ui->plusExp->setText("[ "+QString::number(user.plus.exp)+" / "+QString::number(user.plus.maxExp)+" ]");
-    ui->plusBar->setValue(user.plus.exp);
-    ui->plusBar->setMaximum(user.plus.maxExp);
+    ui->plusBar->setValue(user.plus.exp-user.plus.lastExp);
+    ui->plusBar->setMaximum(user.plus.maxExp-user.plus.lastExp);
     //Minus
     ui->minusLvl->setText("Deleitions  (-) Level"+QString::number(user.minus.lvl));
     ui->minusExp->setText("[ "+QString::number(user.minus.exp)+" / "+QString::number(user.minus.maxExp)+" ]");
-    ui->minusBar->setValue(user.minus.exp);
-    ui->minusBar->setMaximum(user.minus.maxExp);
+    ui->minusBar->setValue(user.minus.exp-user.minus.lastExp);
+    ui->minusBar->setMaximum(user.minus.maxExp-user.minus.lastExp);
 }
 std::pair<int,int> MainWindow::changedExp(){
 //„итаем файл Stals и сравниваем с тем что есть в User
