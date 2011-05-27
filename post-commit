@@ -1,5 +1,7 @@
 #!/bin/sh
 
+
 pwd > "C:/My Dropbox/Programming/BigProjects/C++/GitRPG/raw"
 git log --shortstat >> "C:/My Dropbox/Programming/BigProjects/C++/GitRPG/raw"
+cd "C:/My Dropbox/Programming/BigProjects/C++/GitRPG"
 "C:/My Dropbox/Programming/BigProjects/C++/GitRPG/parse-raw.exe"
