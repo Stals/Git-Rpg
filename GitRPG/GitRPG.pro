@@ -12,9 +12,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    user.cpp
+    user.cpp \
+    eventqueue.cpp
 
 HEADERS  += mainwindow.h \
-    user.h
+    user.h \
+    eventqueue.h
 
 FORMS    += mainwindow.ui

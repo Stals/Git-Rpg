@@ -1,5 +1,6 @@
 #include "user.h"
 #include <fstream>
+
 User::User()
 {
      std::ifstream f("Stats.grpg");
@@ -45,23 +46,27 @@ User::~User(){
 
 }
 void User::checkForLvls(){
+
     if(joint.exp>=joint.maxExp){
         joint.lastExp=joint.maxExp;
         joint.maxExp*=(double)1.5;
         joint.maxExp+=50;
       ++joint.lvl;
+        eQueue.push(levelUp,"Joint Level up");
     }
     if(plus.exp>=plus.maxExp){
         plus.lastExp=plus.maxExp;
         plus.maxExp*=(double)1.5;
         plus.maxExp+=30;
       ++plus.lvl;
+        eQueue.push(levelUp,"Insertions Level up");
     }
     if(minus.exp>=minus.maxExp){
         minus.lastExp=minus.maxExp;
         minus.maxExp*=(double)1.5;
         minus.maxExp+=20;
       ++minus.lvl;
+        eQueue.push(levelUp,"Delitions Level up");
     }
 
 }
