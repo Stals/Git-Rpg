@@ -3,7 +3,7 @@
 #include <map>
 #include <QMainWindow>
 #include <QTimer>
-
+#include "tray.h"
 namespace Ui {
     class MainWindow;
 }
@@ -23,7 +23,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-
+Tray tray;
 private slots:
     void increaseAll(); //Функция используется таймером для постепенного увеличения опыта
 

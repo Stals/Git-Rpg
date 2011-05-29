@@ -1,4 +1,5 @@
 #include "user.h"
+#include "tray.h"
 #include <fstream>
 
 User::User()
@@ -53,6 +54,7 @@ void User::checkForLvls(){
         joint.maxExp+=50;
       ++joint.lvl;
         eQueue.push(levelUp,"Joint Level up");
+
     }
     if(plus.exp>=plus.maxExp){
         plus.lastExp=plus.maxExp;

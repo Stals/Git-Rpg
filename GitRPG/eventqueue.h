@@ -6,8 +6,8 @@
 
 enum eventType {
     levelUp,
-    Achievement,
-    Notification
+    achievement,
+    notification
 };
 struct eventPair {
     eventType eType;

@@ -3,11 +3,11 @@
 
 #include <QSystemTrayIcon>
 #include <QIcon>
-
+#include "eventqueue.h"
 class Tray{
 public:
     Tray();
-    void showIcon();
+    void showEvent();
      QSystemTrayIcon* tray;
 };
 #endif

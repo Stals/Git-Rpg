@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(progressBarTimer, SIGNAL(timeout()),this,SLOT(increaseAll()));
 
     displayStats();
-    Tray tray;
+
 
    func();//при старте запускается func() чтобы проверить небыло ли изменений пока программа была выключена (когда она работает этим занимается fileSystemWatchr)
  }
@@ -75,10 +75,10 @@ void MainWindow::displayStats(){
 //_________________________________
 //eventqueue test
 //eQueue.push(levelUp,"message");
-   if(eQueue.empty()==false){
-        eventPair pair=eQueue.pop();
-        ui->label->setText(pair.message.c_str());
-}
+//   if(eQueue.empty()==false){
+ //       eventPair pair=eQueue.pop();
+//        ui->label->setText(pair.message.c_str());
+//}
 //if(eQueue.empty()==true){ ui->label->setText("Ахтунг");}
 }
 std::pair<int,int> MainWindow::changedExp(){
@@ -151,6 +151,6 @@ void MainWindow::on_pushButton_clicked()
    user.checkForLvls();
    displayStats();
 
-
+    tray.showEvent();
 
 }
