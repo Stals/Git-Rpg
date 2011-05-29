@@ -15,7 +15,7 @@ struct eventPair {
     eventPair(eventType _eType,std::string _message):eType(_eType),message(_message){}
     eventPair():eType(),message(""){}
 };
-//typedef  std::pair<eventType,std::string> eventPair;
+
 class eventQueue
 {
 public:
@@ -30,4 +30,8 @@ private:
 
 };
 extern eventQueue eQueue;
+
+
+
+
 #endif // EVENTQUEUE_H

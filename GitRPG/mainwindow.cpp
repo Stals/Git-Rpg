@@ -4,8 +4,13 @@
 #include "eventqueue.h"
 #include <fstream>
 #include <windows.h>
+#include "tray.h"
+
+
+
 std::pair<int,int>newExp;//плюс и минус полученные из файла Stals
 static User user;
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -19,6 +24,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(progressBarTimer, SIGNAL(timeout()),this,SLOT(increaseAll()));
 
     displayStats();
+    Tray tray;
+
    func();//при старте запускается func() чтобы проверить небыло ли изменений пока программа была выключена (когда она работает этим занимается fileSystemWatchr)
  }
 
@@ -41,6 +48,7 @@ void MainWindow::func(){
   }
 
  displayStats();
+
     //+ внутри таймеров могут появиться сообщения в трей, так что нужно начать таймер который отображает их.
     //! TODO может можно сделать эксепшн типа события, которое может поймать таймер и только тогда показывать сообщения  в трей
     //(чтобы он проверял не каждые N секунд есть ли что в queue, а делал если туда что-то добавилось)
@@ -142,4 +150,7 @@ void MainWindow::on_pushButton_clicked()
    ++user.minus.exp;
    user.checkForLvls();
    displayStats();
+
+
+
 }
