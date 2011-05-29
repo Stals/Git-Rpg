@@ -53,7 +53,7 @@ void User::checkForLvls(){
         joint.maxExp*=(double)1.5;
         joint.maxExp+=50;
       ++joint.lvl;
-        eQueue.push(levelUp,"Joint Level up");
+      eQueue.push(levelUp,"You've achieved Joint Level "+ QString::number(joint.lvl).toStdString());
 
     }
     if(plus.exp>=plus.maxExp){
@@ -61,14 +61,14 @@ void User::checkForLvls(){
         plus.maxExp*=(double)1.5;
         plus.maxExp+=30;
       ++plus.lvl;
-        eQueue.push(levelUp,"Insertions Level up");
+	eQueue.push(levelUp,"You've achieved Insertions Level "+ QString::number(plus.lvl).toStdString());
     }
     if(minus.exp>=minus.maxExp){
         minus.lastExp=minus.maxExp;
         minus.maxExp*=(double)1.5;
         minus.maxExp+=20;
       ++minus.lvl;
-        eQueue.push(levelUp,"Delitions Level up");
+	eQueue.push(levelUp,"You've achieved Delitions Level "+ QString::number(minus.lvl).toStdString());
     }
 
 }

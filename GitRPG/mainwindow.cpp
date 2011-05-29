@@ -72,14 +72,7 @@ void MainWindow::displayStats(){
     ui->minusExp->setText("[ "+QString::number(user.minus.exp-user.minus.lastExp)+" / "+QString::number(user.minus.maxExp-user.minus.lastExp)+" ]");
     ui->minusBar->setValue(user.minus.exp-user.minus.lastExp);
     ui->minusBar->setMaximum(user.minus.maxExp-user.minus.lastExp);
-//_________________________________
-//eventqueue test
-//eQueue.push(levelUp,"message");
-//   if(eQueue.empty()==false){
- //       eventPair pair=eQueue.pop();
-//        ui->label->setText(pair.message.c_str());
-//}
-//if(eQueue.empty()==true){ ui->label->setText("Ахтунг");}
+
 }
 std::pair<int,int> MainWindow::changedExp(){
 //Читаем файл Stals и сравниваем с тем что есть в User
@@ -135,6 +128,7 @@ void MainWindow::increaseAll(){
         }
 
     user.checkForLvls();
+    tray.showEvent();
     displayStats();
     Sleep(5);
     }
