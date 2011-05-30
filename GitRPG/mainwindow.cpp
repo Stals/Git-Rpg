@@ -5,7 +5,7 @@
 #include <fstream>
 #include <windows.h>
 #include "tray.h"
-
+#include <QMenu>
 
 
 std::pair<int,int>newExp;//плюс и минус полученные из файла Stals
@@ -27,6 +27,19 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     func();//при старте запускается func() чтобы проверить небыло ли изменений пока программа была выключена (когда она работает этим занимается fileSystemWatchr)
+
+    QAction *minimizeAction = new QAction("&Minimize", tray.tray);
+    connect(minimizeAction,SIGNAL(triggered()),this,SLOT(hide()));
+    QAction *maximizeAction = new QAction("Maximize",tray.tray);
+    connect(maximizeAction,SIGNAL(triggered()),this,SLOT(show()));
+
+    QMenu *systemTrayMenu = new QMenu(tray.tray->tr("tray"));
+    systemTrayMenu->addSeparator();
+    systemTrayMenu->addAction(maximizeAction);
+    systemTrayMenu->addAction(minimizeAction);
+    tray.tray->setContextMenu(systemTrayMenu);
+    tray.tray->show();
+    systemTrayMenu->show();
 }
 
 MainWindow::~MainWindow()
