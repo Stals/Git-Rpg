@@ -7,7 +7,7 @@
 class Tray{
 public:
     Tray();
-    void showEvent();
+    void showEvent();//показывает одно сообщение из eventQueue , если он не пустой.
     QSystemTrayIcon* tray;
 };
 #endif

@@ -21,8 +21,8 @@ class eventQueue
 public:
     eventQueue();
     bool empty();//Возвращает true если queue пустой иначе false
-    eventPair pop();
-    void push(eventType,std::string);
+    eventPair pop();//Возвращает элемент из начала очереди , и убирает его из queue
+    void push(eventType,std::string);//добавляет элемент в конец очереди
 
 
 private:
