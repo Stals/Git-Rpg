@@ -21,7 +21,9 @@ public:
     Stats joint;
     Stats plus;
     Stats minus;
-void checkForLvls();//проверяет и увеличивает уровень
+    void checkForLvls();//проверяет и увеличивает уровень
+    void loadStats();
+    void saveStats();
 
 };
 

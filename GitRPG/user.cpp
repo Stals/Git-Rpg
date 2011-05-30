@@ -4,27 +4,33 @@
 
 User::User()
 {
-     std::ifstream f("Stats.grpg");
-     f>>name;
-
-     f>>joint.lvl;
-     f>>joint.exp;
-     f>>joint.maxExp;
-     f>>joint.lastExp;
-
-     f>>plus.lvl;
-     f>>plus.exp;
-     f>>plus.maxExp;
-     f>>plus.lastExp;
-
-     f>>minus.lvl;
-     f>>minus.exp;
-     f>>minus.maxExp;
-     f>>minus.lastExp;
-
-     f.close();
+    loadStats();
 }
 User::~User(){
+   saveStats();
+}
+void User::loadStats(){
+    std::ifstream f("Stats.grpg");
+    f>>name;
+
+    f>>joint.lvl;
+    f>>joint.exp;
+    f>>joint.maxExp;
+    f>>joint.lastExp;
+
+    f>>plus.lvl;
+    f>>plus.exp;
+    f>>plus.maxExp;
+    f>>plus.lastExp;
+
+    f>>minus.lvl;
+    f>>minus.exp;
+    f>>minus.maxExp;
+    f>>minus.lastExp;
+
+    f.close();
+}
+void User::saveStats(){
     std::ofstream f("Stats.grpg");
     f<<name<<std::endl;
 
