@@ -11,17 +11,17 @@ void eventQueue::push(eventType eType,std::string message){
 
 
 }
- eventPair eventQueue::pop(){
+eventPair eventQueue::pop(){
     eventPair pair;
     pair=queue.front();
     queue.pop();
     return pair;
 }
- bool eventQueue::empty(){
+bool eventQueue::empty(){
 
-     if(queue.size()==0){
+    if(queue.size()==0){
         return true;
     }else{
         return false;
     }
-  }
+}

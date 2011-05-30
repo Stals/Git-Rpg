@@ -8,6 +8,6 @@ class Tray{
 public:
     Tray();
     void showEvent();
-     QSystemTrayIcon* tray;
+    QSystemTrayIcon* tray;
 };
 #endif

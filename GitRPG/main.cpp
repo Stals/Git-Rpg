@@ -8,24 +8,24 @@
 //Логика класса watcher заключается в том чтобы вызвать функцию func() , когда файл Stals будет изменен
 class Watcher : public QFileSystemWatcher
 {
-        Q_OBJECT
+    Q_OBJECT
 
 public:
     MainWindow* _w;
-        Watcher(MainWindow *w)
-        {
-            _w=w;
+    Watcher(MainWindow *w)
+    {
+	_w=w;
 
-                addPath(QDir::current().filePath("Stals"));
-                connect(this, SIGNAL(fileChanged(const QString&)), this, SLOT(fileChanged(const QString&)));
+	addPath(QDir::current().filePath("Stals"));
+	connect(this, SIGNAL(fileChanged(const QString&)), this, SLOT(fileChanged(const QString&)));
 
-        }
+    }
 
 private slots:
-        void fileChanged(const QString& path)
-        {
-            _w->func();
-        }
+    void fileChanged(const QString& path)
+    {
+	_w->func();
+    }
 };
 int main(int argc, char *argv[])
 {

@@ -13,8 +13,8 @@ static User user;
 
 
 MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+	QMainWindow(parent),
+	ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     //TODO: ћожет при отображении старых статов тоже делать это таймером, всмысле полоска едет и опыт заполн€етс€, от нул€ до того что щас( но не мен€€ уровень). ѕосле этого если есть файл Stals с изменени€ми, можно выдать сообщение в трей типо, о новые данные, щас € всЄ сделаю и начинает заполн€ть...
@@ -26,8 +26,8 @@ MainWindow::MainWindow(QWidget *parent) :
     displayStats();
 
 
-   func();//при старте запускаетс€ func() чтобы проверить небыло ли изменений пока программа была выключена (когда она работает этим занимаетс€ fileSystemWatchr)
- }
+    func();//при старте запускаетс€ func() чтобы проверить небыло ли изменений пока программа была выключена (когда она работает этим занимаетс€ fileSystemWatchr)
+}
 
 MainWindow::~MainWindow()
 {
@@ -37,21 +37,22 @@ void MainWindow::func(){
     ui->label->setText("ok");
     //≈сли измени€ в опыте вли€ют начать увеличение
 
-   newExp=changedExp();
+    newExp=changedExp();
 
     if(newExp.first!=-1){//если были изменени€
         //! TODO: дать сообщение в трей что по€вились новые данные и щас € всЄ сделаю.
         //тогда мы должны стартовать таймеры
         ui->label->setText("StartTimers");
-    progressBarTimer->start(1);
+	progressBarTimer->start(1);
 
-  }
+    }
 
- displayStats();
+    displayStats();
 
     //+ внутри таймеров могут по€витьс€ сообщени€ в трей, так что нужно начать таймер который отображает их.
     //! TODO может можно сделать эксепшн типа событи€, которое может поймать таймер и только тогда показывать сообщени€  в трей
     //(чтобы он провер€л не каждые N секунд есть ли что в queue, а делал если туда что-то добавилось)
+
 }
 void MainWindow::displayStats(){
 
@@ -75,8 +76,8 @@ void MainWindow::displayStats(){
 
 }
 std::pair<int,int> MainWindow::changedExp(){
-//„итаем файл Stals и сравниваем с тем что есть в User
-//ƒл€ этого нам нужно сложить все минусы и плюсы из Stals
+    //„итаем файл Stals и сравниваем с тем что есть в User
+    //ƒл€ этого нам нужно сложить все минусы и плюсы из Stals
     int plus=0;
     int minus=0;
     int numberOfProjects;
@@ -86,10 +87,10 @@ std::pair<int,int> MainWindow::changedExp(){
     std::string p;
     std::ifstream f("Stals");
 
-   f>>numberOfProjects;
+    f>>numberOfProjects;
     for(int i=0;i<numberOfProjects;++i){
-    std::getline(f,projectName);
-    std::getline(f,projectName);
+	std::getline(f,projectName);
+	std::getline(f,projectName);
         f>>buf; plus+=buf;
         f>>buf; minus+=buf;
     }
@@ -127,23 +128,25 @@ void MainWindow::increaseAll(){
 
         }
 
-    user.checkForLvls();
-    tray.showEvent();
-    displayStats();
-    Sleep(5);
+	user.checkForLvls();
+	tray.showEvent();
+	displayStats();
+	Sleep(5);
     }
+    user.saveStats();//ѕосле всех таймеров сохран€ем статы
     progressBarTimer->stop();
+
 }
 
 //! свой слип у каждой статистики в зависимости от того сколько еще осталось добавить
 //! мне просто не пон€тно что делать если первый раз человек запускает и у него 4 тыщи строк, или первый раз и у него 100 строк, скорость должна быть примерно одинаковой,чтобы всЄ это заполнилось
 void MainWindow::on_pushButton_clicked()
 {
-   ++user.joint.exp;
-   ++user.plus.exp;
-   ++user.minus.exp;
-   user.checkForLvls();
-   displayStats();
+    ++user.joint.exp;
+    ++user.plus.exp;
+    ++user.minus.exp;
+    user.checkForLvls();
+    displayStats();
 
     tray.showEvent();
 

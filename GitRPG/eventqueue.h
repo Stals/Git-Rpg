@@ -26,7 +26,7 @@ public:
 
 
 private:
-   std::queue<eventPair> queue;
+    std::queue<eventPair> queue;
 
 };
 extern eventQueue eQueue;

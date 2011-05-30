@@ -11,7 +11,7 @@ namespace Ui {
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-friend class Watcher;
+    friend class Watcher;
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -23,7 +23,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-Tray tray;
+    Tray tray;
 private slots:
     void increaseAll(); //Функция используется таймером для постепенного увеличения опыта
 
