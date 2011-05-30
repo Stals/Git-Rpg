@@ -3,7 +3,19 @@
 Tray::Tray(){
     tray=new QSystemTrayIcon();
     tray->setIcon(QIcon("images/tray.png"));
+
+    minimizeAction = new QAction("&Minimize", tray);
+    maximizeAction = new QAction("Maximize",tray);
+    systemTrayMenu = new QMenu(tray->tr("tray"));
+
+    systemTrayMenu->addAction(maximizeAction);
+    systemTrayMenu->addAction(minimizeAction);
+    //systemTrayMenu->addSeparator();
+    tray->setContextMenu(systemTrayMenu);
+
+
     tray->show();
+    systemTrayMenu->show();
 }
 void Tray::showEvent(){
     if(eQueue.empty()!=true){

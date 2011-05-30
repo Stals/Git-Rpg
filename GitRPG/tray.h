@@ -3,11 +3,18 @@
 
 #include <QSystemTrayIcon>
 #include <QIcon>
+#include <QAction>
+#include <QMenu>
+
 #include "eventqueue.h"
 class Tray{
 public:
-    Tray();
+    Tray();//—оздаЄт »конку в трее, и добавл€ет меню чтобы можно было свернуть или развернуть приложение
     void showEvent();//показывает одно сообщение из eventQueue , если он не пустой.
+
     QSystemTrayIcon* tray;
+    QAction *minimizeAction;
+    QAction *maximizeAction;
+    QMenu *systemTrayMenu;
 };
 #endif
