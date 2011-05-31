@@ -30,12 +30,34 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(tray.minimizeAction,SIGNAL(triggered()),this,SLOT(hide()));//hides window if minimize in a tray menu was pressed
     connect(tray.maximizeAction,SIGNAL(triggered()),this,SLOT(show()));//shows window if maximize in a tray menu was pressed
-
+    connect(tray.tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+	    this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
+{
+    switch (reason) {
+    case QSystemTrayIcon::Trigger:
+
+	break;
+    case QSystemTrayIcon::DoubleClick:
+	if(this->isHidden()==true){
+	    this->show();
+	    this->activateWindow();
+	}else{
+	    this->hide();
+	}
+	break;
+    case QSystemTrayIcon::MiddleClick:
+	//	showMessage();
+	break;
+    default:
+	;
+    }
 }
 void MainWindow::func(){
     ui->label->setText("ok");
