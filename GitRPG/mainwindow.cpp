@@ -25,13 +25,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
     displayStats();
 
-
-    func();//при старте запускается func() чтобы проверить небыло ли изменений пока программа была выключена (когда она работает этим занимается fileSystemWatchr)
+    setFixedSize(width(), height());
 
     connect(tray.minimizeAction,SIGNAL(triggered()),this,SLOT(hide()));//hides window if minimize in a tray menu was pressed
     connect(tray.maximizeAction,SIGNAL(triggered()),this,SLOT(show()));//shows window if maximize in a tray menu was pressed
     connect(tray.tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
 	    this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+
+
+    func();//при старте запускается func() чтобы проверить небыло ли изменений пока программа была выключена (когда она работает этим занимается fileSystemWatchr)
+
 }
 
 MainWindow::~MainWindow()
