@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     displayStats();
 
-    setFixedSize(width(), height());
+    setFixedSize(width(), height());//Ќе позвол€ет измен€ть размер окна.
 
     connect(tray.minimizeAction,SIGNAL(triggered()),this,SLOT(hide()));//hides window if minimize in a tray menu was pressed
     connect(tray.maximizeAction,SIGNAL(triggered()),this,SLOT(show()));//shows window if maximize in a tray menu was pressed
@@ -56,12 +56,21 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 	}
 	break;
     case QSystemTrayIcon::MiddleClick:
-	//	showMessage();
+	//TODO ѕоказать статискики (уровни и опыт во всплывающем окне)
+	eQueue.push(notification,"Joint Level "+QString::number(user.joint.lvl).toStdString()+"\t ("+QString::number(user.joint.exp-user.joint.lastExp).toStdString()+"/"+QString::number(user.joint.maxExp-user.joint.lastExp).toStdString()+")\n"+
+				 "Insertions Level "+QString::number(user.plus.lvl).toStdString()+"\t ("+QString::number(user.plus.exp-user.plus.lastExp).toStdString()+"/"+QString::number(user.plus.maxExp-user.plus.lastExp).toStdString()+")\n"+
+				 "Delitions Level "+QString::number(user.minus.lvl).toStdString()+"\t ("+QString::number(user.minus.exp-user.minus.lastExp).toStdString()+"/"+QString::number(user.minus.maxExp-user.minus.lastExp).toStdString()+")");
+
+
+	tray.showEvent();
+//	showMessage();
 	break;
     default:
 	;
     }
 }
+
+
 void MainWindow::func(){
     ui->label->setText("ok");
     //≈сли измени€ в опыте вли€ют начать увеличение
