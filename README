@@ -23,6 +23,13 @@ Files:
 * Stats.grpg - stores stats for GitRPG programm itself. This is updated every time you lunch GitRPG.exe
 * GitRPG.exe - main program that shows all your stats
 
+Folders:
+* git - parse-raw project folder
+* GitRPG - is a qt project with gui
+* GitRPG-build-desktop - place where GitRPG is builded
+* images - here are images for the project (such as tray and application icons)
+* oldthing - just old scripts i don't want to delete yet
+
 Tray Features:
 * double-click - hides and shows window
 * middle-click - shows stats in tray
