@@ -6,16 +6,19 @@ Tray::Tray(){
 
     minimizeAction = new QAction("&Minimize", tray);
     maximizeAction = new QAction("Maximize",tray);
+    quitAction=new QAction("&Quit",tray);
     systemTrayMenu = new QMenu(tray->tr("tray"));
 
     systemTrayMenu->addAction(maximizeAction);
     systemTrayMenu->addAction(minimizeAction);
-    //systemTrayMenu->addSeparator();
+    systemTrayMenu->addSeparator();
+    systemTrayMenu->addAction(quitAction);
+
     tray->setContextMenu(systemTrayMenu);
 
 
-    tray->show();
-    systemTrayMenu->show();
+    this->tray->show();
+    this->systemTrayMenu->show();
 }
 void Tray::showEvent(){
     if(eQueue.empty()!=true){

@@ -15,6 +15,7 @@ public:
     QSystemTrayIcon* tray;
     QAction *minimizeAction;
     QAction *maximizeAction;
+    QAction *quitAction;
     QMenu *systemTrayMenu;
 };
 #endif
