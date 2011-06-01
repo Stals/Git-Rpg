@@ -56,14 +56,13 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 	}
 	break;
     case QSystemTrayIcon::MiddleClick:
-	//TODO Показать статискики (уровни и опыт во всплывающем окне)
-	eQueue.push(notification,"Joint Level "+QString::number(user.joint.lvl).toStdString()+"\t ("+QString::number(user.joint.exp-user.joint.lastExp).toStdString()+"/"+QString::number(user.joint.maxExp-user.joint.lastExp).toStdString()+")\n"+
-				 "Insertions Level "+QString::number(user.plus.lvl).toStdString()+"\t ("+QString::number(user.plus.exp-user.plus.lastExp).toStdString()+"/"+QString::number(user.plus.maxExp-user.plus.lastExp).toStdString()+")\n"+
-				 "Delitions Level "+QString::number(user.minus.lvl).toStdString()+"\t ("+QString::number(user.minus.exp-user.minus.lastExp).toStdString()+"/"+QString::number(user.minus.maxExp-user.minus.lastExp).toStdString()+")");
+
+	eQueue.push(notification,"Joint Level "+QString::number(user.joint.lvl).toStdString()+" ("+QString::number(user.joint.exp-user.joint.lastExp).toStdString()+"/"+QString::number(user.joint.maxExp-user.joint.lastExp).toStdString()+")\n"+
+		    "Insertions Level "+QString::number(user.plus.lvl).toStdString()+" ("+QString::number(user.plus.exp-user.plus.lastExp).toStdString()+"/"+QString::number(user.plus.maxExp-user.plus.lastExp).toStdString()+")\n"+
+		    "Delitions Level "+QString::number(user.minus.lvl).toStdString()+" ("+QString::number(user.minus.exp-user.minus.lastExp).toStdString()+"/"+QString::number(user.minus.maxExp-user.minus.lastExp).toStdString()+")");
 
 
 	tray.showEvent();
-//	showMessage();
 	break;
     default:
 	;

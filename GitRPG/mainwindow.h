@@ -26,7 +26,7 @@ private:
     Tray tray;
 private slots:
 
-    void iconActivated(QSystemTrayIcon::ActivationReason reason);
+    void iconActivated(QSystemTrayIcon::ActivationReason reason);//вызывается при клике на иконку в трее
     void increaseAll(); //Функция используется таймером для постепенного увеличения опыта
 
     void on_pushButton_clicked();
