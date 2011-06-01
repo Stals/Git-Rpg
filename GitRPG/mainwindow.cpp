@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(tray.minimizeAction,SIGNAL(triggered()),this,SLOT(hide()));//hides window if minimize in a tray menu was pressed
     connect(tray.maximizeAction,SIGNAL(triggered()),this,SLOT(show()));//shows window if maximize in a tray menu was pressed
-    connect(tray.quitAction,SIGNAL(triggered()),this,SLOT(close()));//hides window if minimize in a tray menu was pressed
+    connect(tray.quitAction,SIGNAL(triggered()),this,SLOT(close()));//closes application if quit in a tray menu was pressed
     connect(tray.tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
 	    this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 
