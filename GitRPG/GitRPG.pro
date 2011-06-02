@@ -5,7 +5,7 @@
 #-------------------------------------------------
 
 QT       += core gui
-
+RC_FILE = GitRPG.rc
 TARGET = GitRPG
 TEMPLATE = app
 
