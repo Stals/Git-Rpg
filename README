@@ -9,11 +9,22 @@ Also this system can track several people and make rating.
 
 At the begining i will make it just for one person and his local repos. Because otherwise it would a lot of work, and if nobody needs this , there is no scence. We'll see.
 
+HOWTO:
+* You need to install GitRPG (installer is not ready yet)
+* Edit post-commit file with a diretory in wich you instellet GitPRG
+* Take post-commit file and insert it into each .git/hooks folder of repository that you want to track
+* Lunch GitRPG.exe and try to commit somthing 
+
+Tray Features:
+* double-click - hides and shows window
+* middle-click - shows stats in tray
+* right-click  - shows menu with some options
+
 IDEAS:
 * Tray icon and notifications
 * Achievements
 * Rating
-
+* SVN support ?
 
 Files:
 * raw - is a file made of git coomit history to track insertions and deletions (for 1 project)
@@ -23,7 +34,9 @@ Files:
 * Stats.grpg - stores stats for GitRPG programm itself. This is updated every time you lunch GitRPG.exe
 * GitRPG.exe - main program that shows all your stats
 
-Tray Features:
-* double-click - hides and shows window
-* middle-click - shows stats in tray
-* right-click  - shows menu with some options
+GitHub Folders:
+* git - parse-raw project folder
+* GitRPG - is a qt project with gui
+* GitRPG-build-desktop - place where GitRPG is builded
+* images - here are images for the project (such as tray and application icons)
+* oldthing - just old scripts i don't want to delete yet
