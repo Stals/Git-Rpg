@@ -24,6 +24,7 @@ IDEAS:
 * Tray icon and notifications
 * Achievements
 * Rating
+* SVN support ?
 
 Files:
 * raw - is a file made of git coomit history to track insertions and deletions (for 1 project)
