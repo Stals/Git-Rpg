@@ -70,12 +70,7 @@ void User::checkForLvls(){
 	eQueue.push(levelUp,"You've achieved Insertions Level "+ QString::number(plus.lvl).toStdString());
     }
     //Опыт minus увеличивается в зависимости от разности его и plus, она получается из newExp
-    //Хм, так у меня не получается контролировать уровень примерно рядом с плюсом. Вопрос почему
-    //Просто скорость заполнения плюсов не такая как минусов потому- то происходит так что его большая часть (минусов) например 50% успевает пройти пока у плюсов только 20 потому и идёт опережения, так как он уровень получает еще до того как его получил плюс, за опыт больший
-    //но для этого мне нужно в разных потоках заполнять, просто вот так как щас написано , будет работать только если сразу заполняется немного, тоесть когда только начинаеш фигачить гит, или новый проект, а не сразу 5000 тыщь. Что делать когда первый раз запускает типо, даже например я у которого 5 тыщ. конечно можно просто не добавлять такие большие проекты, но это не решение.
-    //На мой взгляд решение это заполнение по скорости какраз равной разности плюсов и минусов в Stals. Так что если плюсов в 10 раз больше, то и заполняется он в 10 раз быстрее.
-    //В данный моент единственным решением без потоков евлятеся штука как в StalsRPG когда в зависимости от агилы ходы меняются. И там есть контрольное число.Вот также нада. или потоки. Лучше потоки помоему.
-    //Я короче точно уверен что это проблема того что статы заполняются все на 1 одновременно
+
     if(minus.exp>=minus.maxExp){
         minus.lastExp=minus.maxExp;
 	minus.maxExp=minus.lastExp+(plus.maxExp-plus.lastExp)*(double)((double)newExp.second/(double)newExp.first);
@@ -83,5 +78,10 @@ void User::checkForLvls(){
 	eQueue.push(levelUp,"You've achieved Delitions Level "+ QString::number(minus.lvl).toStdString());
     }
 
+}
+std::string User::getStats(){
+    return  "Joint Level "+QString::number(joint.lvl).toStdString()+" ("+QString::number(joint.exp-joint.lastExp).toStdString()+"/"+QString::number(joint.maxExp-joint.lastExp).toStdString()+")\n"+
+	    "Insertions Level "+QString::number(plus.lvl).toStdString()+" ("+QString::number(plus.exp-plus.lastExp).toStdString()+"/"+QString::number(plus.maxExp-plus.lastExp).toStdString()+")\n"+
+	    "Delitions Level "+QString::number(minus.lvl).toStdString()+" ("+QString::number(minus.exp-minus.lastExp).toStdString()+"/"+QString::number(minus.maxExp-minus.lastExp).toStdString()+")";
 }
 

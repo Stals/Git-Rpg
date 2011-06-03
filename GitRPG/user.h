@@ -27,6 +27,7 @@ public:
 
 
     void checkForLvls();//проверяет и увеличивает уровень
+    std::string getStats();//возвращает строку для печати или вывода
     void loadStats();
     void saveStats();
 

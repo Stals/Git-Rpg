@@ -46,7 +46,6 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     switch (reason) {
     case QSystemTrayIcon::Trigger:
-
 	break;
     case QSystemTrayIcon::DoubleClick:
 	if(this->isHidden()==true){
@@ -57,16 +56,11 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 	}
 	break;
     case QSystemTrayIcon::MiddleClick:
-
-	eQueue.push(notification,"Joint Level "+QString::number(user.joint.lvl).toStdString()+" ("+QString::number(user.joint.exp-user.joint.lastExp).toStdString()+"/"+QString::number(user.joint.maxExp-user.joint.lastExp).toStdString()+")\n"+
-		    "Insertions Level "+QString::number(user.plus.lvl).toStdString()+" ("+QString::number(user.plus.exp-user.plus.lastExp).toStdString()+"/"+QString::number(user.plus.maxExp-user.plus.lastExp).toStdString()+")\n"+
-		    "Delitions Level "+QString::number(user.minus.lvl).toStdString()+" ("+QString::number(user.minus.exp-user.minus.lastExp).toStdString()+"/"+QString::number(user.minus.maxExp-user.minus.lastExp).toStdString()+")");
-
-
+	eQueue.push(notification,user.getStats());
 	tray.showEvent();
 	break;
     default:
-	;
+	break;
     }
 }
 
