@@ -79,7 +79,7 @@ void MainWindow::func(){
     if(getChangedExp()){//если были изменения
 	//! TODO: может стоит писать об изменениях Joint тоже?
 	eQueue.push(progress,"Insertions: "+QString::number(user.newExp.first-user.plus.exp).toStdString()+"\n"+
-			     "Delitions: "+QString::number(user.newExp.second-user.minus.exp).toStdString());
+		    "Delitions: "+QString::number(user.newExp.second-user.minus.exp).toStdString());
 	tray.showEvent();
 
 
@@ -164,9 +164,15 @@ void MainWindow::increaseAll(){
             ui->plusBar->setValue(user.plus.exp);
         }
 	if(user.minus.exp<user.newExp.second){
-            ++user.minus.exp;
-            ui->minusBar->setValue(user.minus.exp);
-
+	    //сравниваем то что осталось добавить с общей разницей из newExp
+	    //! TODO может вычислять при получении и потом хранить в юзер , также как и newExp?(чтобы не вычислять каждый раз
+	    const double balance=(double)user.newExp.second/(double)user.newExp.first;
+	    if((user.newExp.first-user.plus.exp)!=0){
+		if(balance<=((double)(user.newExp.second-user.minus.exp)/(double)(user.newExp.first-user.plus.exp))){
+		    ++user.minus.exp;
+		    ui->minusBar->setValue(user.minus.exp);
+		}
+	    }
         }
 
 	user.checkForLvls();
