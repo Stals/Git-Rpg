@@ -33,6 +33,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(tray.tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
 	    this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
 
+    tray.tray->setToolTip(QString(user.getStats().c_str()));
 
     func();//при старте запускается func() чтобы проверить небыло ли изменений пока программа была выключена (когда она работает этим занимается fileSystemWatchr)
 

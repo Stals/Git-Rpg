@@ -18,6 +18,7 @@ HOWTO:
 Tray Features:
 * double-click - hides and shows window
 * middle-click - shows stats in tray
+* mouse-over   - shows stats in tray 
 * right-click  - shows menu with some options
 
 IDEAS:
