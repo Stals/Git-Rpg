@@ -8,7 +8,7 @@
 
 
 
-std::pair<int,int>newExp;//плюс и минус полученные из файла Stals
+
 static User user;
 
 
@@ -70,15 +70,19 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
     }
 }
 
-
 void MainWindow::func(){
     ui->label->setText("ok");
     //≈сли измени€ в опыте вли€ют начать увеличение
 
-    newExp=changedExp();
 
-    if(newExp.first!=-1){//если были изменени€
-        //! TODO: дать сообщение в трей что по€вились новые данные и щас € всЄ сделаю.
+
+    if(getChangedExp()){//если были изменени€
+	//! TODO: может стоит писать об изменени€х Joint тоже?
+	eQueue.push(progress,"Insertions: "+QString::number(user.newExp.first-user.plus.exp).toStdString()+"\n"+
+			     "Delitions: "+QString::number(user.newExp.second-user.minus.exp).toStdString());
+	tray.showEvent();
+
+
         //тогда мы должны стартовать таймеры
         ui->label->setText("StartTimers");
 	progressBarTimer->start(1);
@@ -113,7 +117,7 @@ void MainWindow::displayStats(){
     ui->minusBar->setMaximum(user.minus.maxExp-user.minus.lastExp);
 
 }
-std::pair<int,int> MainWindow::changedExp(){
+bool MainWindow::getChangedExp(){
     //„итаем файл Stals и сравниваем с тем что есть в User
     //ƒл€ этого нам нужно сложить все минусы и плюсы из Stals
     int plus=0;
@@ -132,35 +136,34 @@ std::pair<int,int> MainWindow::changedExp(){
         f>>buf; plus+=buf;
         f>>buf; minus+=buf;
     }
-    std::pair<int,int> joint;
+
 
 
     if((plus>user.plus.exp)||(minus>user.minus.exp)){
-        joint.first=plus;
-        joint.second=minus;
+	user.newExp.first=plus;
+	user.newExp.second=minus;
+	return true;
 
-        return joint;
     }else{
-        joint.first=-1;
-        joint.second=-1;
+	return false;
 
-        return joint;
+
     }
 
 }
 
 void MainWindow::increaseAll(){
 
-    while((user.plus.exp<newExp.first)||(user.minus.exp<newExp.second)||(user.joint.exp<(newExp.first+newExp.second))){
-        if(user.joint.exp<(newExp.first+newExp.second)){
+    while((user.plus.exp<user.newExp.first)||(user.minus.exp<user.newExp.second)||(user.joint.exp<(user.newExp.first+user.newExp.second))){
+	if(user.joint.exp<(user.newExp.first+user.newExp.second)){
             ++user.joint.exp;
             ui->jointBar->setValue(user.joint.exp);
         }
-        if(user.plus.exp<newExp.first){
+	if(user.plus.exp<user.newExp.first){
             ++user.plus.exp;
             ui->plusBar->setValue(user.plus.exp);
         }
-        if(user.minus.exp<newExp.second){
+	if(user.minus.exp<user.newExp.second){
             ++user.minus.exp;
             ui->minusBar->setValue(user.minus.exp);
 

@@ -35,7 +35,9 @@ void Tray::showEvent(){
 	case notification:
 	    type="";
 	    break;
-
+	case progress:
+	    type="Your progress has changed!";
+	    break;
 	}
 
 
