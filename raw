@@ -1,4 +1,20 @@
 /c/My Dropbox/Programming/BigProjects/C++/GitRPG
+commit 69cfb44b3f510b46bee8be175305db9ad06bcc7a
+Author: Stals <superstals@gmail.com>
+Date:   Fri Jun 3 21:13:40 2011 +0400
+
+    tooltip for tray added
+
+ 2 files changed, 2 insertions(+), 0 deletions(-)
+
+commit 79eeb0badc2ccde7b4ed2294adb0fb8860807625
+Author: Stals <superstals@gmail.com>
+Date:   Fri Jun 3 20:48:25 2011 +0400
+
+    raw file update
+
+ 1 files changed, 255 insertions(+), 0 deletions(-)
+
 commit daa29c19d8c733a264be332e3baaf0e67a733c8e
 Author: Stals <superstals@gmail.com>
 Date:   Fri Jun 3 20:44:45 2011 +0400
