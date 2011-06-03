@@ -183,7 +183,7 @@ void MainWindow::increaseAll(){
 //! мне просто не понятно что делать если первый раз человек запускает и у него 4 тыщи строк, или первый раз и у него 100 строк, скорость должна быть примерно одинаковой,чтобы всё это заполнилось
 void MainWindow::on_pushButton_clicked()
 {
-    ++user.joint.exp;
+    user.joint.exp+=2;
     ++user.plus.exp;
     ++user.minus.exp;
     user.checkForLvls();

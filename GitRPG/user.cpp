@@ -56,23 +56,20 @@ void User::checkForLvls(){
 
     if(joint.exp>=joint.maxExp){
         joint.lastExp=joint.maxExp;
-        joint.maxExp*=(double)1.5;
-        joint.maxExp+=50;
+	joint.maxExp=joint.lastExp+(plus.maxExp-plus.lastExp)+(minus.maxExp-minus.lastExp);
       ++joint.lvl;
       eQueue.push(levelUp,"You've achieved Joint Level "+ QString::number(joint.lvl).toStdString());
 
     }
     if(plus.exp>=plus.maxExp){
         plus.lastExp=plus.maxExp;
-        plus.maxExp*=(double)1.5;
-        plus.maxExp+=30;
+	plus.maxExp=plus.lastExp+200+20*plus.lvl;
       ++plus.lvl;
 	eQueue.push(levelUp,"You've achieved Insertions Level "+ QString::number(plus.lvl).toStdString());
     }
     if(minus.exp>=minus.maxExp){
         minus.lastExp=minus.maxExp;
-        minus.maxExp*=(double)1.5;
-        minus.maxExp+=20;
+	minus.maxExp=minus.lastExp+50+10*minus.lvl;
       ++minus.lvl;
 	eQueue.push(levelUp,"You've achieved Delitions Level "+ QString::number(minus.lvl).toStdString());
     }

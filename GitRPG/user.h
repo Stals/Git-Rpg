@@ -21,7 +21,10 @@ public:
     Stats joint;
     Stats plus;
     Stats minus;
-    std::pair<int,int>newExp;//плюс и минус полученные из файла Stals first - insertions, second - delitions (обновляется методами mainwindow,даже при старте приложения получает значения там)
+    std::pair<int,int>newExp;//плюс и минус полученные из файла Stals first - insertions, second - delitions
+    //(обновляется методами mainwindow,даже при старте приложения получает значения там)
+    //Но после того как пройдёт func статы в newExp и в plus,minus будут одинаковы
+
 
     void checkForLvls();//проверяет и увеличивает уровень
     void loadStats();
