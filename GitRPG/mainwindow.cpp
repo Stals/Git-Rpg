@@ -5,7 +5,7 @@
 #include <fstream>
 #include <windows.h>
 #include "tray.h"
-
+#include <cmath>
 
 
 
@@ -161,13 +161,19 @@ void MainWindow::increaseAll(){
 	if(user.minus.exp<user.newExp.second){
 	    //сравниваем то что осталось добавить с общей разницей из newExp
 	    //! TODO может вычислять при получении и потом хранить в юзер , также как и newExp?(чтобы не вычислять каждый раз
-	    const double balance=(double)user.newExp.second/(double)user.newExp.first;
-	    if((user.newExp.first-user.plus.exp)!=0){
-		if(balance<=((double)(user.newExp.second-user.minus.exp)/(double)(user.newExp.first-user.plus.exp))){
+
+
+		double allBalance=(double)user.newExp.second/(double)user.newExp.first;
+		allBalance=std::floor(allBalance+0.5);
+		double newBalance=(double)(user.newExp.second-user.minus.exp)/(double)(user.newExp.first-user.plus.exp);
+		newBalance=std::floor(newBalance+0.5);
+
+
+		if(allBalance<=newBalance){
 		    ++user.minus.exp;
 		    ui->minusBar->setValue(user.minus.exp);
 		}
-	    }
+
         }
 
 	user.checkForLvls();
