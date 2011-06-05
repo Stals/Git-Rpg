@@ -164,9 +164,9 @@ void MainWindow::increaseAll(){
 
 
 		double allBalance=(double)user.newExp.second/(double)user.newExp.first;
-		allBalance=std::floor(allBalance+0.5);
+
 		double newBalance=(double)(user.newExp.second-user.minus.exp)/(double)(user.newExp.first-user.plus.exp);
-		newBalance=std::floor(newBalance+0.5);
+
 
 
 		if(allBalance<=newBalance){
