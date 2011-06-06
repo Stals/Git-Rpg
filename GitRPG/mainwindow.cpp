@@ -183,7 +183,7 @@ void MainWindow::increaseAll(){
     }
     user.saveStats();//После всех таймеров сохраняем статы
     progressBarTimer->stop();
-
+    tray.tray->setToolTip(QString(user.getStats().c_str()));//обновить сообщение при наведение на Tray
 }
 
 //! свой слип у каждой статистики в зависимости от того сколько еще осталось добавить
