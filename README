@@ -13,6 +13,7 @@ HOWTO:
 * You need to install GitRPG (installer is not ready yet)
 * Edit post-commit file with a diretory in wich you instellet GitPRG
 * Take post-commit file and insert it into each .git/hooks folder of repository that you want to track
+* Take post-commit file and insert it into .../git/share/git-core/templates/hooks so that all your new repo's will have that hook in them
 * Lunch GitRPG.exe and try to commit somthing 
 
 Tray Features:
@@ -22,7 +23,6 @@ Tray Features:
 * right-click  - shows menu with some options
 
 IDEAS:
-* Tray icon and notifications
 * Achievements
 * Rating
 * SVN support ?
