@@ -47,14 +47,15 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     switch (reason) {
     case QSystemTrayIcon::Trigger:
-	break;
-    case QSystemTrayIcon::DoubleClick:
 	if(this->isHidden()==true){
-	    this->show();
-	    this->activateWindow();
+	    this->showNormal();
 	}else{
 	    this->hide();
 	}
+	break;
+
+    case QSystemTrayIcon::DoubleClick:
+
 	break;
     case QSystemTrayIcon::MiddleClick:
 	eQueue.push(notification,user.getStats());
@@ -65,6 +66,19 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
     }
 }
 
+void MainWindow::changeEvent (QEvent *e)
+{
+    if(e->type() == QEvent::WindowStateChange)
+    {
+	//Now check to see if the window is minimised
+	if (isMinimized())
+	{
+
+	    QTimer::singleShot(250, this, SLOT(hide()));
+
+	}
+    }
+}
 void MainWindow::func(){
     ui->label->setText("ok");
     //Если измения в опыте влияют начать увеличение
@@ -78,8 +92,8 @@ void MainWindow::func(){
 	tray.showEvent();
 
 
-        //тогда мы должны стартовать таймеры
-        ui->label->setText("StartTimers");
+	//тогда мы должны стартовать таймеры
+	ui->label->setText("StartTimers");
 	progressBarTimer->start(1);
 
     }
@@ -128,8 +142,8 @@ bool MainWindow::getChangedExp(){
     for(int i=0;i<numberOfProjects;++i){
 	std::getline(f,projectName);
 	std::getline(f,projectName);
-        f>>buf; plus+=buf;
-        f>>buf; minus+=buf;
+	f>>buf; plus+=buf;
+	f>>buf; minus+=buf;
     }
 
 
@@ -151,30 +165,30 @@ void MainWindow::increaseAll(){
 
     while((user.plus.exp<user.newExp.first)||(user.minus.exp<user.newExp.second)||(user.joint.exp<(user.newExp.first+user.newExp.second))){
 	if(user.joint.exp<(user.newExp.first+user.newExp.second)){
-            ++user.joint.exp;
-            ui->jointBar->setValue(user.joint.exp);
-        }
+	    ++user.joint.exp;
+	    ui->jointBar->setValue(user.joint.exp);
+	}
 	if(user.plus.exp<user.newExp.first){
-            ++user.plus.exp;
-            ui->plusBar->setValue(user.plus.exp);
-        }
+	    ++user.plus.exp;
+	    ui->plusBar->setValue(user.plus.exp);
+	}
 	if(user.minus.exp<user.newExp.second){
 	    //сравниваем то что осталось добавить с общей разницей из newExp
 	    //! TODO может вычислять при получении и потом хранить в юзер , также как и newExp?(чтобы не вычислять каждый раз
 
 
-		double allBalance=(double)user.newExp.second/(double)user.newExp.first;
+	    double allBalance=(double)user.newExp.second/(double)user.newExp.first;
 
-		double newBalance=(double)(user.newExp.second-user.minus.exp)/(double)(user.newExp.first-user.plus.exp);
+	    double newBalance=(double)(user.newExp.second-user.minus.exp)/(double)(user.newExp.first-user.plus.exp);
 
 
 
-		if(allBalance<=newBalance){
-		    ++user.minus.exp;
-		    ui->minusBar->setValue(user.minus.exp);
-		}
+	    if(allBalance<=newBalance){
+		++user.minus.exp;
+		ui->minusBar->setValue(user.minus.exp);
+	    }
 
-        }
+	}
 
 	user.checkForLvls();
 	tray.showEvent();

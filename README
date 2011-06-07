@@ -17,7 +17,7 @@ HOWTO:
 * Lunch GitRPG.exe and try to commit somthing 
 
 Tray Features:
-* double-click - hides and shows window
+* left-click   - hides/shows window
 * middle-click - shows stats in tray
 * mouse-over   - shows stats in tray 
 * right-click  - shows menu with some options

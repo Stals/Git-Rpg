@@ -29,6 +29,7 @@ private slots:
     void iconActivated(QSystemTrayIcon::ActivationReason reason);//вызывается при клике на иконку в трее
     void increaseAll(); //Функция используется таймером для постепенного увеличения опыта
 
+    void changeEvent (QEvent *e);//Следит за event'ами и при сворачивании окна минимизирует его в tray
     void on_pushButton_clicked();
 };
 
