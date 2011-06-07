@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu 2. Jun 18:31:34 2011
+** Created: Tue 7. Jun 20:02:26 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -20,7 +20,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QMainWindow>
 #include <QtGui/QProgressBar>
-#include <QtGui/QPushButton>
 #include <QtGui/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -30,7 +29,6 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QGridLayout *gridLayout_2;
-    QLabel *label;
     QGridLayout *gridLayout;
     QLabel *userName;
     QHBoxLayout *horizontalLayout;
@@ -45,13 +43,12 @@ public:
     QProgressBar *minusBar;
     QProgressBar *plusBar;
     QProgressBar *jointBar;
-    QPushButton *pushButton;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(368, 238);
+        MainWindow->resize(368, 203);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -66,16 +63,6 @@ public:
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        label = new QLabel(centralWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Ignored);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
-        label->setSizePolicy(sizePolicy1);
-
-        gridLayout_2->addWidget(label, 2, 0, 1, 1);
-
         gridLayout = new QGridLayout();
         gridLayout->setSpacing(6);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -183,12 +170,7 @@ public:
         gridLayout->addWidget(jointBar, 2, 0, 1, 1);
 
 
-        gridLayout_2->addLayout(gridLayout, 3, 0, 1, 1);
-
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        gridLayout_2->addWidget(pushButton, 1, 0, 1, 1);
+        gridLayout_2->addLayout(gridLayout, 1, 0, 1, 1);
 
         MainWindow->setCentralWidget(centralWidget);
 
@@ -200,7 +182,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QString());
-        label->setText(QApplication::translate("MainWindow", "TextLabel", 0, QApplication::UnicodeUTF8));
         userName->setText(QApplication::translate("MainWindow", "STALS", 0, QApplication::UnicodeUTF8));
         jointLvl->setText(QApplication::translate("MainWindow", "Joint Level 4", 0, QApplication::UnicodeUTF8));
         jointExp->setText(QApplication::translate("MainWindow", "[755 / 1000]", 0, QApplication::UnicodeUTF8));
@@ -208,7 +189,6 @@ public:
         plusExp->setText(QApplication::translate("MainWindow", "[250 / 720 ]", 0, QApplication::UnicodeUTF8));
         minusLvl->setText(QApplication::translate("MainWindow", "Deleitions  (-)  Level 2", 0, QApplication::UnicodeUTF8));
         minusExp->setText(QApplication::translate("MainWindow", "[12 / 120]", 0, QApplication::UnicodeUTF8));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

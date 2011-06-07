@@ -30,7 +30,7 @@ private slots:
     void increaseAll(); //Функция используется таймером для постепенного увеличения опыта
 
     void changeEvent (QEvent *e);//Следит за event'ами и при сворачивании окна минимизирует его в tray
-    void on_pushButton_clicked();
+
 };
 
 #endif // MAINWINDOW_H
