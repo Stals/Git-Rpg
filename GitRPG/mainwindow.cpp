@@ -49,6 +49,7 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
     case QSystemTrayIcon::Trigger:
 	if(this->isHidden()==true){
 	    this->showNormal();
+	    this->activateWindow();
 	}else{
 	    this->hide();
 	}
