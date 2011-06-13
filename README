@@ -16,6 +16,9 @@ HOWTO:
 * Take post-commit file and insert it into .../git/share/git-core/templates/hooks so that all your new repo's will have that hook in them
 * Lunch GitRPG.exe and try to commit somthing 
 
+GitIgnore:
+If you do not whant to make new .gitignore file in each directory - make .global_ignore file in your User/UserName folder
+
 Tray Features:
 * left-click   - hides/shows window
 * middle-click - shows stats in tray
