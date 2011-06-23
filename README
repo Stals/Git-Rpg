@@ -8,6 +8,7 @@ HOWTO:
 * Edit post-commit file with a directory in wich you instellet GitPRG
 * Take post-commit file and insert it into each ".git/hooks" folder of repository that you want to track
 * Take post-commit file and insert it into ".../git/share/git-core/templates/hooks" so that all your new repo's will have that hook in them
+* Also if you want to ignore some repo just delete its post-commit hook
 * Lunch "GitRPG.exe" and try to commit somthing 
 
 GitIgnore:
