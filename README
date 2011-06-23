@@ -21,7 +21,6 @@ If you do not whant to make new .gitignore file in each directory - make .global
 
 Tray Features:
 * left-click   - hides/shows window
-* middle-click - shows stats in tray
 * mouse-over   - shows stats in tray 
 * right-click  - shows menu with some options
 

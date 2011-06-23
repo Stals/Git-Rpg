@@ -59,8 +59,6 @@ void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
 
 	break;
     case QSystemTrayIcon::MiddleClick:
-	eQueue.push(notification,user.getStats());
-	tray.showEvent();
 	break;
     default:
 	break;
