@@ -26,6 +26,7 @@ public:
     void push(eventType,std::string);//добавляет элемент в конец очереди
 
 
+
 private:
     std::queue<eventPair> queue;
 

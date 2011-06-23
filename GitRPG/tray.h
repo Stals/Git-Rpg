@@ -8,6 +8,7 @@
 
 #include "eventqueue.h"
 class Tray{
+
 public:
     Tray();//—оздаЄт »конку в трее, и добавл€ет меню чтобы можно было свернуть или развернуть приложение
     void showEvent();//показывает одно сообщение из eventQueue , если он не пустой.
@@ -17,5 +18,7 @@ public:
     QAction *maximizeAction;
     QAction *quitAction;
     QMenu *systemTrayMenu;
+
+
 };
 #endif

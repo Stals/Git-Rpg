@@ -15,7 +15,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    QTimer *progressBarTimer;
+
+    QTimer *progressBarTimer; //таймер позволяющий заполнять progress bar'ы постепенно
+    QTimer *eventTimer;//таймер позволяющий постоянно смотреть не появилось ли нового события которое нужно вывести
 
     void func();//Функция вызывается чтобы проверить изменения и если они есть отобразить их на форме
     void displayStats();//оборажает характеристики Пользователя на форме.
@@ -30,6 +32,9 @@ private slots:
     void increaseAll(); //Функция используется таймером для постепенного увеличения опыта
 
     void changeEvent (QEvent *e);//Следит за event'ами и при сворачивании окна минимизирует его в tray
+
+    void showEvent();//вызывает метод из tray для отображения событий который были добавлены в eventQueue
+
 
 };
 

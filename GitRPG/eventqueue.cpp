@@ -14,6 +14,7 @@ void eventQueue::push(eventType eType,std::string message){
 eventPair eventQueue::pop(){
     eventPair pair;
     pair=queue.front();
+
     queue.pop();
     return pair;
 }

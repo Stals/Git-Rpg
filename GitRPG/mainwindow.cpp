@@ -23,6 +23,10 @@ MainWindow::MainWindow(QWidget *parent) :
     progressBarTimer = new QTimer(this);
     connect(progressBarTimer, SIGNAL(timeout()),this,SLOT(increaseAll()));
 
+    eventTimer = new QTimer(this);
+    connect(eventTimer,SIGNAL(timeout()),this,SLOT(showEvent()));
+    eventTimer->start(1000);
+
     displayStats();
 
     setFixedSize(width(), height());//Не позволяет изменять размер окна.
@@ -86,7 +90,7 @@ void MainWindow::func(){
 	//! TODO: может стоит писать об изменениях Joint тоже?
 	eQueue.push(progress,"Insertions: "+QString::number(user.newExp.first-user.plus.exp).toStdString()+"\n"+
 		    "Delitions: "+QString::number(user.newExp.second-user.minus.exp).toStdString());
-	tray.showEvent();
+
 
 
 	//тогда мы должны стартовать таймеры
@@ -188,7 +192,7 @@ void MainWindow::increaseAll(){
 	}
 
 	user.checkForLvls();
-	tray.showEvent();
+
 	displayStats();
 	Sleep(5);
     }
@@ -200,3 +204,6 @@ void MainWindow::increaseAll(){
 //! свой слип у каждой статистики в зависимости от того сколько еще осталось добавить
 //! мне просто не понятно что делать если первый раз человек запускает и у него 4 тыщи строк, или первый раз и у него 100 строк, скорость должна быть примерно одинаковой,чтобы всё это заполнилось
 
+void MainWindow::showEvent(){
+    tray.showEvent();
+}
