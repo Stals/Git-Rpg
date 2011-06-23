@@ -45,6 +45,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
+    tray.tray->setVisible(false);
     delete ui;
 }
 void MainWindow::iconActivated(QSystemTrayIcon::ActivationReason reason)
