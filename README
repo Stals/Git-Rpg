@@ -1,23 +1,17 @@
 This is an opensource project, so feel free to join.
 
-
-General idea is to get insertions and delitions from all your repos. So that every time youre coding youre gaining exp.(For the number of lines) 
-
-There also could be achievements( for example at least 100 lines of code per day for 3 days or 10 commits, 1000 lines total and so on)
-Also this system can track several people and make rating.
-
-
-At the begining i will make it just for one person and his local repos. Because otherwise it would a lot of work, and if nobody needs this , there is no scence. We'll see.
+General idea is to get insertions and delitions from all your repos.
+So that you can see how much exp you gain each time you commit somthing.
 
 HOWTO:
-* You need to install GitRPG (installer is not ready yet)
-* Edit post-commit file with a diretory in wich you instellet GitPRG
-* Take post-commit file and insert it into each .git/hooks folder of repository that you want to track
-* Take post-commit file and insert it into .../git/share/git-core/templates/hooks so that all your new repo's will have that hook in them
-* Lunch GitRPG.exe and try to commit somthing 
+* You need to install "GitRPG_installer.exe" (installer is not ready yet)
+* Edit post-commit file with a directory in wich you instellet GitPRG
+* Take post-commit file and insert it into each ".git/hooks" folder of repository that you want to track
+* Take post-commit file and insert it into ".../git/share/git-core/templates/hooks" so that all your new repo's will have that hook in them
+* Lunch "GitRPG.exe" and try to commit somthing 
 
 GitIgnore:
-If you do not whant to make new .gitignore file in each directory - make .global_ignore file in your User/UserName folder
+* If you do not whant to make new ".gitignore" file in each directory - make ".global_ignore" file in your User/UserName folder
 
 Tray Features:
 * left-click   - hides/shows window
