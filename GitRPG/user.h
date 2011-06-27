@@ -21,7 +21,7 @@ public:
     Stats joint;
     Stats plus;
     Stats minus;
-    std::pair<int,int>newExp;//плюс и минус полученные из файла Stals first - insertions, second - delitions
+    std::pair<int,int>newExp;//плюс и минус полученные из файла Stals first - Additions, second - delitions
     //(обновл€етс€ методами mainwindow,даже при старте приложени€ получает значени€ там)
     //Ќо после того как пройдЄт func статы в newExp и в plus,minus будут одинаковы
 

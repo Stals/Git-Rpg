@@ -89,7 +89,7 @@ void MainWindow::func(){
 
     if(getChangedExp()){//если были изменения
 	//! TODO: может стоит писать об изменениях Joint тоже?
-	eQueue.push(progress,"Insertions: "+QString::number(user.newExp.first-user.plus.exp).toStdString()+"\n"+
+	eQueue.push(progress,"Additions: "+QString::number(user.newExp.first-user.plus.exp).toStdString()+"\n"+
 		    "Delitions: "+QString::number(user.newExp.second-user.minus.exp).toStdString());
 
 
@@ -117,7 +117,7 @@ void MainWindow::displayStats(){
     ui->jointBar->setValue(user.joint.exp-user.joint.lastExp);
     ui->jointBar->setMaximum(user.joint.maxExp-user.joint.lastExp);
     //Plus
-    ui->plusLvl->setText("Insertions (+) Level "+QString::number(user.plus.lvl));
+    ui->plusLvl->setText("Additions (+) Level "+QString::number(user.plus.lvl));
     ui->plusExp->setText("[ "+QString::number(user.plus.exp-user.plus.lastExp)+" / "+QString::number(user.plus.maxExp-user.plus.lastExp)+" ]");
     ui->plusBar->setValue(user.plus.exp-user.plus.lastExp);
     ui->plusBar->setMaximum(user.plus.maxExp-user.plus.lastExp);

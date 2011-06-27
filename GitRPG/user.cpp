@@ -67,7 +67,7 @@ void User::checkForLvls(){
         plus.lastExp=plus.maxExp;
 	plus.maxExp=plus.lastExp+200+20*plus.lvl;
 	++plus.lvl;
-	eQueue.push(levelUp,"You've achieved Insertions Level "+ QString::number(plus.lvl).toStdString());
+	eQueue.push(levelUp,"You've achieved Additions Level "+ QString::number(plus.lvl).toStdString());
     }
     //Опыт minus увеличивается в зависимости от разности его и plus, она получается из newExp
 
@@ -81,7 +81,7 @@ void User::checkForLvls(){
 }
 std::string User::getStats(){
     return  "Joint Level "+QString::number(joint.lvl).toStdString()+" ("+QString::number(joint.exp-joint.lastExp).toStdString()+"/"+QString::number(joint.maxExp-joint.lastExp).toStdString()+")\n"+
-	    "Insertions Level "+QString::number(plus.lvl).toStdString()+" ("+QString::number(plus.exp-plus.lastExp).toStdString()+"/"+QString::number(plus.maxExp-plus.lastExp).toStdString()+")\n"+
+	    "Additions Level "+QString::number(plus.lvl).toStdString()+" ("+QString::number(plus.exp-plus.lastExp).toStdString()+"/"+QString::number(plus.maxExp-plus.lastExp).toStdString()+")\n"+
 	    "Delitions Level "+QString::number(minus.lvl).toStdString()+" ("+QString::number(minus.exp-minus.lastExp).toStdString()+"/"+QString::number(minus.maxExp-minus.lastExp).toStdString()+")";
 }
 
