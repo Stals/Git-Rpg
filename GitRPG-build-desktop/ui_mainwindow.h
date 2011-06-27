@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Tue 7. Jun 20:02:26 2011
+** Created: Mon 27. Jun 18:34:10 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -185,7 +185,7 @@ public:
         userName->setText(QApplication::translate("MainWindow", "STALS", 0, QApplication::UnicodeUTF8));
         jointLvl->setText(QApplication::translate("MainWindow", "Joint Level 4", 0, QApplication::UnicodeUTF8));
         jointExp->setText(QApplication::translate("MainWindow", "[755 / 1000]", 0, QApplication::UnicodeUTF8));
-        plusLvl->setText(QApplication::translate("MainWindow", "Insertions (+) Level 5", 0, QApplication::UnicodeUTF8));
+        plusLvl->setText(QApplication::translate("MainWindow", "Additions (+) Level 5", 0, QApplication::UnicodeUTF8));
         plusExp->setText(QApplication::translate("MainWindow", "[250 / 720 ]", 0, QApplication::UnicodeUTF8));
         minusLvl->setText(QApplication::translate("MainWindow", "Deleitions  (-)  Level 2", 0, QApplication::UnicodeUTF8));
         minusExp->setText(QApplication::translate("MainWindow", "[12 / 120]", 0, QApplication::UnicodeUTF8));
