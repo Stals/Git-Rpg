@@ -20,6 +20,8 @@ def getDataFromRaw(name):
     list.append(f.readline()[:-1])#first line is a project dir
     gitLog=f.read()
     #TODO get the whole name , but not the part before space. I need to get evety thing between author and <email>
+    #TODO how does file looks if there are no email?
+    #TODO use this to get full name : http://stackoverflow.com/questions/6683067/parse-git-log-file-with-python/6683140#6683140
     info=re.findall(r"Author: (\S+) <.+\n.+\n\n.+\n\n.+ (\d+) insertions\S+, (\d+) deletions",gitLog)
 
     f.close()
