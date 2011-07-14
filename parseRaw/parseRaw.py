@@ -13,15 +13,13 @@ def getProjectsData(name):
     f.close()
     return projectsData
 
-#TODO some how inserions become out if range , mb because names and info have different length
-#TODO threr could me a merge commit...
 # I think i can make one regular expression for one commit.
 def getDataFromRaw(name):
     list=[]
     f=open("raw","r")
     list.append(f.readline()[:-1])#first line is a project dir
     gitLog=f.read()
-
+    #TODO get the whole name , but not the part before space. I need to get evety thing between author and <email>
     info=re.findall(r"Author: (\S+) <.+\n.+\n\n.+\n\n.+ (\d+) insertions\S+, (\d+) deletions",gitLog)
 
     f.close()
@@ -46,7 +44,7 @@ def editProjectsData(projectsData,newData):
             inProjects=True
             info[1]=newData[1] #inserions
             info[2]=newData[2] #deletions
-    if inProjects==False:#if it is a new project
+    if not inProjects:#if it is a new project
         projectsData.append(newData)
 
     return projectsData
